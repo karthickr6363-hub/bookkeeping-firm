@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal | LEDGER PRO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg-light);
+            padding: 2rem;
+        }
+
+        .login-card {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="login-card">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+
+            <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Client Portal</h1>
+            <p style="color: var(--color-text-gray); margin-bottom: 2rem;">Secure login to access your documents.</p>
+
+            <form id="loginForm" onsubmit="event.preventDefault(); alert('This is a demo portal.');">
+                <div style="margin-bottom: 1rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
+                    <input type="email" class="form-input" placeholder="you@company.com" required>
+                </div>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Password</label>
+                    <input type="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Sign In</button>
+                <div style="font-size: 0.9rem;">
+                    <a href="#" style="color: var(--color-accent); text-decoration: none;">Forgot Password?</a>
+                </div>
+                <div style="margin-top: 1rem; font-size: 0.95rem;">
+                    Don't have an account? <a href="register.html"
+                        style="color: var(--color-accent); text-decoration: none; font-weight: 600;">create account</a>
+                </div>
+            </form>
+
+            <div
+                style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-bg-light); font-size: 0.85rem; color: var(--color-text-gray);">
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="display: flex; align-items: center; gap: 0.25rem;"><i class="ph-fill ph-lock"></i>
+                        256-bit SSL</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;"><i
+                            class="ph-fill ph-shield-check"></i> SOC 2</span>
+                </div>
+                Protected by Bank-Level Security
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

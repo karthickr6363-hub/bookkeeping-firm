@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | LEDGER PRO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <!-- Dropdown Example -->
+                <div class="has-dropdown">
+                    <span class="nav-link">Services <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="services.html#bookkeeping" class="dropdown-item">Bookkeeping</a>
+                        <a href="services.html#tax" class="dropdown-item">Tax Preparation</a>
+                        <a href="services.html#payroll" class="dropdown-item">Payroll</a>
+                        <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
+                    </div>
+                </div>
+                <div class="has-dropdown">
+                    <span class="nav-link">Industries <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="industries.html" class="dropdown-item">E-Commerce</a>
+                        <a href="industries.html" class="dropdown-item">Real Estate</a>
+                        <a href="industries.html" class="dropdown-item">Healthcare</a>
+                        <a href="industries.html" class="dropdown-item">Startups</a>
+                    </div>
+                </div>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                    <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+                    <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle RTL">RTL</button>
+                    <a href="register.html" class="btn btn-outline btn-sm">Sign Up</a>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="industries.html" class="mobile-nav-link">Industries</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button id="theme-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
+                <button id="rtl-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+        <section class="section-padding bg-dark" style="color: white;">
+            <div class="container text-center">
+                <h1>Financial Resources</h1>
+                <p style="opacity: 0.8; margin-top: 1rem;">Guides, templates, and insights to help you manage your
+                    money.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Article 1 -->
+                    <div class="card">
+                        <div
+                            style="height: 200px; background: var(--color-bg-light); border-radius: var(--radius-lg); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--color-text-gray);">
+                            Image</div>
+                        <span class="badge badge-blue">Guide</span>
+                        <h3 style="margin: 0.5rem 0 1rem;">Small Business Tax Checklist 2026</h3>
+                        <p style="color: var(--color-text-gray); margin-bottom: 1.5rem;">Everything you need to gather
+                            before filing dates arrive.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Read Article</a>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="card">
+                        <div
+                            style="height: 200px; background: var(--color-bg-light); border-radius: var(--radius-lg); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--color-text-gray);">
+                            Image</div>
+                        <span class="badge badge-success">Template</span>
+                        <h3 style="margin: 0.5rem 0 1rem;">Cash Flow Forecast Excel Sheet</h3>
+                        <p style="color: var(--color-text-gray); margin-bottom: 1.5rem;">Download our free template to
+                            predict your runway.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Download</a>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="card">
+                        <div
+                            style="height: 200px; background: var(--color-bg-light); border-radius: var(--radius-lg); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--color-text-gray);">
+                            Image</div>
+                        <span class="badge badge-warning">Webinar</span>
+                        <h3 style="margin: 0.5rem 0 1rem;">Understanding Financial Statements</h3>
+                        <p style="color: var(--color-text-gray); margin-bottom: 1.5rem;">Watch our CEO explain P&L and
+                            Balance Sheets simply.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Watch Video</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="card bg-light text-center"
+                    style="margin-top: 4rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p style="margin-bottom: 1.5rem;">Get financial tips delivered to your inbox weekly.</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Enter your email" class="form-input" style="flex:1;">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

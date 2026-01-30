@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 | LEDGER PRO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link active">Home 2</a>
+                <!-- Dropdown Example -->
+                <div class="has-dropdown">
+                    <span class="nav-link">Services <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="services.html#bookkeeping" class="dropdown-item">Bookkeeping</a>
+                        <a href="services.html#tax" class="dropdown-item">Tax Preparation</a>
+                        <a href="services.html#payroll" class="dropdown-item">Payroll</a>
+                        <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
+                    </div>
+                </div>
+                <div class="has-dropdown">
+                    <span class="nav-link">Industries <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="industries.html" class="dropdown-item">E-Commerce</a>
+                        <a href="industries.html" class="dropdown-item">Real Estate</a>
+                        <a href="industries.html" class="dropdown-item">Healthcare</a>
+                        <a href="industries.html" class="dropdown-item">Startups</a>
+                    </div>
+                </div>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                    <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+                    <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle RTL">RTL</button>
+                    <a href="register.html" class="btn btn-outline btn-sm">Sign Up</a>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="industries.html" class="mobile-nav-link">Industries</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button id="theme-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
+                <button id="rtl-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+        <section class="section-padding bg-dark" style="color: white;">
+            <div class="container text-center">
+                <h1>Specialized For Your Industry</h1>
+                <p style="opacity: 0.8; margin-top: 1rem;">We understand the unique financial challenges of your sector.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Industry Card 1 -->
+                    <div class="card">
+                        <i class="ph-fill ph-shopping-cart"
+                            style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+                        <h3>E-Commerce</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
+                            Managing inventory COGS, multi-channel sales tax (Nexus), and payment processor fees.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Industry Card 2 -->
+                    <div class="card">
+                        <i class="ph-fill ph-house-line"
+                            style="font-size: 3rem; color: var(--color-purple); margin-bottom: 1rem;"></i>
+                        <h3>Real Estate</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
+                            Handling rental income, property depreciation, 1031 exchanges, and multiple entities.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Industry Card 3 -->
+                    <div class="card">
+                        <i class="ph-fill ph-briefcase"
+                            style="font-size: 3rem; color: var(--color-success); margin-bottom: 1rem;"></i>
+                        <h3>Professional Services</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
+                            Project profitability tracking, retainer management, and wip accounting.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Industry Card 4 -->
+                    <div class="card">
+                        <i class="ph-fill ph-rocket-launch"
+                            style="font-size: 3rem; color: var(--color-warning); margin-bottom: 1rem;"></i>
+                        <h3>Startups</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
+                            Burn rate monitoring, cap table management, and R&D tax credit filings.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Industry Card 5 -->
+                    <div class="card">
+                        <i class="ph-fill ph-heartbeat"
+                            style="font-size: 3rem; color: #EF4444; margin-bottom: 1rem;"></i>
+                        <h3>Healthcare</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
+                            Private practice accounting, equipment amortization, and high income tax planning.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Industry Card 6 -->
+                    <div class="card">
+                        <i class="ph-fill ph-hard-hat"
+                            style="font-size: 3rem; color: #F59E0B; margin-bottom: 1rem;"></i>
+                        <h3>Construction</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
+                            Job costing, changing orders, progress billing, and contractor payments.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

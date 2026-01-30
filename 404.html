@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | LEDGER PRO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+
+                <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                    <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+                    <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle RTL">RTL</button>
+                    <a href="register.html" class="btn btn-outline btn-sm">Sign Up</a>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button id="theme-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
+                <button id="rtl-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+            </div>
+        </div>
+    </header>
+
+    <main
+        style="padding-top: var(--header-height); min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="container">
+            <i class="ph-fill ph-warning-octagon"
+                style="font-size: 5rem; color: var(--color-warning); margin-bottom: 2rem;"></i>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">This Page Isn't Balanced</h1>
+            <p style="color: var(--color-text-gray); font-size: 1.2rem; margin-bottom: 2rem;">The books don't match up.
+                The page you are looking for might have been moved or doesn't exist.</p>
+
+            <div
+                style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--radius-lg); display: inline-block; margin-bottom: 2rem;">
+                <strong>Did you know?</strong><br>
+                <span style="font-style: italic; color: var(--color-text-gray);">The word "tax" comes from the Latin
+                    'taxare', which means 'to estimate'. We prefer precision over estimation.</span>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="index.html" class="btn btn-primary">Go Home</a>
+                <a href="contact.html" class="btn btn-outline">Report Issue</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 LEDGER PRO.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEDGER PRO | Your Financial Clarity Partner</title>
+    <meta name="description"
+        content="Professional bookkeeping, tax preparation, and financial advisory trusted by 500+ businesses.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Ledger Pro",
+      "image": "https://example.com/logo.png",
+      "@id": "",
+      "url": "https://www.ledgerpro.com",
+      "telephone": "+15551234567",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Financial District Blvd",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10005",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/ledgerpro",
+        "https://www.twitter.com/ledgerpro",
+        "https://www.linkedin.com/company/ledgerpro"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <!-- Dropdown Example -->
+                <div class="has-dropdown">
+                    <span class="nav-link">Services <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="services.html#bookkeeping" class="dropdown-item">Bookkeeping</a>
+                        <a href="services.html#tax" class="dropdown-item">Tax Preparation</a>
+                        <a href="services.html#payroll" class="dropdown-item">Payroll</a>
+                        <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
+                    </div>
+                </div>
+                <div class="has-dropdown">
+                    <span class="nav-link">Industries <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="industries.html" class="dropdown-item">E-Commerce</a>
+                        <a href="industries.html" class="dropdown-item">Real Estate</a>
+                        <a href="industries.html" class="dropdown-item">Healthcare</a>
+                        <a href="industries.html" class="dropdown-item">Startups</a>
+                    </div>
+                </div>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                    <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+                    <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle RTL">RTL</button>
+                    <a href="register.html" class="btn btn-outline btn-sm">Sign Up</a>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="industries.html" class="mobile-nav-link">Industries</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button id="theme-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
+                <button id="rtl-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content fade-in">
+                    <div class="trust-badges">
+                        <div class="trust-badge"><i class="ph-fill ph-certificate"></i> CPA Certified</div>
+                        <div class="trust-badge"><i class="ph-fill ph-check-circle"></i> BBB A+</div>
+                    </div>
+                    <h1>Financial Clarity<br>For <span class="text-gradient">Growing Businesses</span></h1>
+                    <p class="hero-subtitle">Professional bookkeeping, tax preparation, and financial advisory trusted
+                        by 500+ businesses.</p>
+
+                    <div class="hero-actions">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Schedule Free Consultation</a>
+                        <a href="services.html" class="btn btn-outline btn-lg">View Our Services</a>
+                    </div>
+
+                    <div style="display: flex; gap: 2rem; opacity: 0.7;">
+                        <div>
+                            <strong>500+</strong><br><small>Clients Served</small>
+                        </div>
+                        <div>
+                            <strong>$18K</strong><br><small>Avg Tax Savings</small>
+                        </div>
+                        <div>
+                            <strong>99.9%</strong><br><small>Accuracy</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-preview slide-in-right">
+                    <div class="dashboard-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <h4 style="font-size: 1rem; margin:0;">Financial Overview</h4>
+                            <span class="badge badge-success">Live</span>
+                        </div>
+                        <div class="stat-row">
+                            <div
+                                style="background:var(--color-bg-light); padding:0.5rem; border-radius:var(--radius-md);">
+                                <small style="display:block; color:var(--color-text-gray);">Revenue</small>
+                                <span style="font-weight:700; color:var(--color-success);">+24%</span>
+                            </div>
+                            <div
+                                style="background:var(--color-bg-light); padding:0.5rem; border-radius:var(--radius-md);">
+                                <small style="display:block; color:var(--color-text-gray);">Expenses</small>
+                                <span style="font-weight:700; color:var(--color-warning);">-12%</span>
+                            </div>
+                            <div
+                                style="background:var(--color-bg-light); padding:0.5rem; border-radius:var(--radius-md);">
+                                <small style="display:block; color:var(--color-text-gray);">Profit</small>
+                                <span style="font-weight:700; color:var(--color-accent);">+36%</span>
+                            </div>
+                        </div>
+                        <canvas id="heroChart" width="400" height="250"></canvas>
+                    </div>
+
+                    <!-- Floating Cards -->
+                    <div class="floating-card top-right">
+                        <div style="background:var(--color-success); width:10px; height:10px; border-radius:50%;"></div>
+                        <div>
+                            <small style="display:block; line-height:1;">Tax Saved</small>
+                            <strong>$4,250</strong>
+                        </div>
+                    </div>
+
+                    <div class="floating-card bottom-left">
+                        <div style="background:var(--color-accent); width:10px; height:10px; border-radius:50%;"></div>
+                        <div>
+                            <small style="display:block; line-height:1;">Cash Flow</small>
+                            <strong>Positive</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Props -->
+        <section class="value-props">
+            <div class="container">
+                <div class="props-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-target"></i>
+                        </div>
+                        <h3>Accurate Books</h3>
+                        <p style="color:var(--color-text-gray); margin-top:0.5rem;">99.9% Accuracy Guaranteed. We handle
+                            every transaction with precision so you don't have to worry.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-lightning"></i>
+                        </div>
+                        <h3>Real-Time Insights</h3>
+                        <p style="color:var(--color-text-gray); margin-top:0.5rem;">Access your live financial dashboard
+                            anytime. Make decisions based on data, not guesswork.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-trend-up"></i>
+                        </div>
+                        <h3>Tax Optimization</h3>
+                        <p style="color:var(--color-text-gray); margin-top:0.5rem;">Our clients save an average of $18K
+                            annually through strategic tax planning and compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Services Tabs -->
+        <section class="section-padding bg-light" id="services">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Comprehensive Financial Services</h2>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">Everything you need to manage your business
+                        finances under one roof.</p>
+                </div>
+
+                <div class="services-tabs">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="openTab(event, 'tab-bookkeeping')">Bookkeeping</button>
+                        <button class="tab-btn" onclick="openTab(event, 'tab-tax')">Tax Preparation</button>
+                        <button class="tab-btn" onclick="openTab(event, 'tab-payroll')">Payroll</button>
+                        <button class="tab-btn" onclick="openTab(event, 'tab-cfo')">CFO Advisory</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div id="tab-bookkeeping" class="tab-content fade-in" style="display: block;">
+                        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                            <div>
+                                <h3 style="margin-bottom: 1rem;">Precision Bookkeeping</h3>
+                                <p style="margin-bottom: 1.5rem; color: var(--color-text-gray);">
+                                    Stop drowning in receipts. We categorize every transaction, reconcile accounts, and
+                                    provide monthly financial statements so you're always audit-ready.
+                                </p>
+                                <ul style="list-style: none; margin-bottom: 2rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle"
+                                            style="color: var(--color-success); margin-right: 0.5rem;"></i> Monthly
+                                        Reconciliations</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle"
+                                            style="color: var(--color-success); margin-right: 0.5rem;"></i> P&L and
+                                        Balance Sheet</li>
+                                    <li><i class="ph-fill ph-check-circle"
+                                            style="color: var(--color-success); margin-right: 0.5rem;"></i> Accounts
+                                        Payable/Receivable</li>
+                                </ul>
+                                <a href="services.html" class="btn btn-primary">Learn More</a>
+                            </div>
+                            <div class="card">
+                                <!-- Mockup image/illustration -->
+                                <div
+                                    style="background: var(--color-bg-light); height: 200px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                                    <i class="ph-fill ph-notebook"
+                                        style="font-size: 4rem; color: var(--color-accent);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-tax" class="tab-content fade-in" style="display: none;">
+                        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                            <div>
+                                <h3 style="margin-bottom: 1rem;">Strategic Tax Filing</h3>
+                                <p style="margin-bottom: 1.5rem; color: var(--color-text-gray);">
+                                    Don't just pay taxes—optimize them. Our CPAs find every deduction and credit you
+                                    deserve.
+                                </p>
+                                <a href="services.html" class="btn btn-primary">Start Saving</a>
+                            </div>
+                            <div class="card">
+                                <div
+                                    style="background: var(--color-bg-light); height: 200px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                                    <i class="ph-fill ph-receipt"
+                                        style="font-size: 4rem; color: var(--color-purple);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other tabs placeholders for brevity, script handles show/hide -->
+                    <div id="tab-payroll" class="tab-content fade-in" style="display: none;">
+                        <div class="text-center">
+                            <h3>Payroll Services Content</h3>
+                        </div>
+                    </div>
+                    <div id="tab-cfo" class="tab-content fade-in" style="display: none;">
+                        <div class="text-center">
+                            <h3>CFO Advisory Content</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Dashboard Demo -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>See Your Financials clearly</h2>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">A live interactive demo of what you get as a
+                        client.</p>
+                </div>
+
+                <div class="card" style="border: 2px solid var(--color-bg-light);">
+                    <div class="grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                        <div
+                            style="display: flex; gap: 1rem; border-bottom: 1px solid var(--color-bg-light); padding-bottom: 1rem; overflow-x: auto;">
+                            <!-- Filter Buttons UI -->
+                            <button class="btn btn-sm btn-primary">Overview</button>
+                            <button class="btn btn-sm btn-outline">Transactions</button>
+                            <button class="btn btn-sm btn-outline">Reports</button>
+                        </div>
+
+                        <div class="grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <!-- Chart 1 -->
+                            <div>
+                                <h5>Quarterly Profit</h5>
+                                <canvas id="demoRevenueChart"></canvas>
+                            </div>
+                            <!-- Chart 2 -->
+                            <div>
+                                <h5>Expense Breakdown</h5>
+                                <div style="max-height: 250px; display: flex; justify-content: center;">
+                                    <canvas id="demoExpenseChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Table Mockup -->
+                        <div style="overflow-x: auto; margin-top: 2rem;">
+                            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                                <thead>
+                                    <tr
+                                        style="text-align: left; border-bottom: 2px solid var(--color-bg-light); color: var(--color-text-gray);">
+                                        <th style="padding: 1rem;">Date</th>
+                                        <th style="padding: 1rem;">Description</th>
+                                        <th style="padding: 1rem;">Category</th>
+                                        <th style="padding: 1rem;">Amount</th>
+                                        <th style="padding: 1rem;">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--color-bg-light);">
+                                        <td style="padding: 1rem;">Oct 24, 2025</td>
+                                        <td style="padding: 1rem;">Client Payment - Acme Corp</td>
+                                        <td style="padding: 1rem;">Income</td>
+                                        <td style="padding: 1rem; color: var(--color-success);">+$4,500.00</td>
+                                        <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--color-bg-light);">
+                                        <td style="padding: 1rem;">Oct 23, 2025</td>
+                                        <td style="padding: 1rem;">Software Subscription</td>
+                                        <td style="padding: 1rem;">Expense</td>
+                                        <td style="padding: 1rem; color: var(--color-text-dark);">-$129.00</td>
+                                        <td style="padding: 1rem;"><span class="badge badge-blue">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Process Timeline -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2>How We Work</h2>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">A simple 4-step process to financial clarity.
+                    </p>
+                </div>
+
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; position: relative;">
+                    <!-- Line connector (desktop only) -->
+                    <div
+                        style="position: absolute; top: 40px; left: 0; width: 100%; height: 2px; background: var(--color-bg-light); z-index: 0; display: none;">
+                    </div>
+
+                    <div class="text-center" style="position: relative; z-index: 1;">
+                        <div
+                            style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-md); font-size: 2rem; color: var(--color-primary); font-weight: 700; border: 4px solid var(--color-bg-light);">
+                            1</div>
+                        <h4>Discovery</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-gray);">We analyze your current setup and
+                            goals.</p>
+                    </div>
+
+                    <div class="text-center" style="position: relative; z-index: 1;">
+                        <div
+                            style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-md); font-size: 2rem; color: var(--color-accent); font-weight: 700; border: 4px solid var(--color-bg-light);">
+                            2</div>
+                        <h4>Setup</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-gray);">Seamless integration with your bank
+                            & tools.</p>
+                    </div>
+
+                    <div class="text-center" style="position: relative; z-index: 1;">
+                        <div
+                            style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-md); font-size: 2rem; color: var(--color-purple); font-weight: 700; border: 4px solid var(--color-bg-light);">
+                            3</div>
+                        <h4>Optimize</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-gray);">CPA review to maximize deductions.
+                        </p>
+                    </div>
+
+                    <div class="text-center" style="position: relative; z-index: 1;">
+                        <div
+                            style="width: 80px; height: 80px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-md); font-size: 2rem; color: white; font-weight: 700; border: 4px solid var(--color-bg-light);">
+                            4</div>
+                        <h4>Manage</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-gray);">Monthly reports and ongoing
+                            support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Grid -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Industries We Serve</h2>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">Specialized expertise for your specific business
+                        model.</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <a href="industries.html" class="card"
+                        style="text-decoration: none; color: inherit; text-align: center; padding: 2rem 1rem; transition: all var(--transition-fast);">
+                        <i class="ph-fill ph-shopping-cart"
+                            style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">E-Commerce</h4>
+                        <p style="font-size: 0.85rem; color: var(--color-text-gray);">Inventory & Stripe sync</p>
+                    </a>
+
+                    <a href="industries.html" class="card"
+                        style="text-decoration: none; color: inherit; text-align: center; padding: 2rem 1rem;">
+                        <i class="ph-fill ph-house-line"
+                            style="font-size: 2.5rem; color: var(--color-purple); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Real Estate</h4>
+                        <p style="font-size: 0.85rem; color: var(--color-text-gray);">Rental & multiple entities</p>
+                    </a>
+
+                    <a href="industries.html" class="card"
+                        style="text-decoration: none; color: inherit; text-align: center; padding: 2rem 1rem;">
+                        <i class="ph-fill ph-briefcase"
+                            style="font-size: 2.5rem; color: var(--color-success); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Professional Services</h4>
+                        <p style="font-size: 0.85rem; color: var(--color-text-gray);">Agencies & Consultants</p>
+                    </a>
+
+                    <a href="industries.html" class="card"
+                        style="text-decoration: none; color: inherit; text-align: center; padding: 2rem 1rem;">
+                        <i class="ph-fill ph-rocket-launch"
+                            style="font-size: 2.5rem; color: var(--color-warning); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Startups</h4>
+                        <p style="font-size: 0.85rem; color: var(--color-text-gray);">Burn rate & fundraising</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Transparent Pricing</h2>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">No hidden fees. Scale up or down anytime.</p>
+                </div>
+
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
+                    <!-- Essentials -->
+                    <div class="card" style="border-top: 4px solid var(--color-text-gray);">
+                        <h3 style="font-size: 1.5rem; color: var(--color-text-gray);">Essentials</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; margin: 1rem 0;">$500<span
+                                style="font-size: 1rem; font-weight: 400; color: var(--color-text-gray);">/mo</span>
+                        </div>
+                        <p style="color: var(--color-text-gray); margin-bottom: 2rem;">Perfect for small businesses just
+                            getting started.</p>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                        <ul style="margin-top: 2rem; list-style: none;">
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Monthly Bookkeeping</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Quarterly Fin. Reports</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Email Support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Professional -->
+                    <div class="card"
+                        style="border-top: 4px solid var(--color-accent); transform: scale(1.05); box-shadow: var(--shadow-xl); position: relative; z-index: 1;">
+                        <span
+                            style="position: absolute; top: 0; right: 0; background: var(--color-accent); color: white; padding: 0.25rem 1rem; font-size: 0.75rem; font-weight: 700; border-bottom-left-radius: var(--radius-md);">MOST
+                            POPULAR</span>
+                        <h3 style="font-size: 1.5rem; color: var(--color-accent);">Professional</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; margin: 1rem 0;">$1,200<span
+                                style="font-size: 1rem; font-weight: 400; color: var(--color-text-gray);">/mo</span>
+                        </div>
+                        <p style="color: var(--color-text-gray); margin-bottom: 2rem;">For growing companies needing
+                            strategic insight.</p>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                        <ul style="margin-top: 2rem; list-style: none;">
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Weekly Bookkeeping</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Monthly Video Review</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Tax Planning Included</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Payroll Management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="card" style="border-top: 4px solid var(--color-primary);">
+                        <h3 style="font-size: 1.5rem; color: var(--color-primary);">Enterprise</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; margin: 1rem 0;">Custom</div>
+                        <p style="color: var(--color-text-gray); margin-bottom: 2rem;">Full-service financial department
+                            outsource.</p>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                        <ul style="margin-top: 2rem; list-style: none;">
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Daily Reconciliation</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Fractional CFO</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Audit Protection</li>
+                            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;"><i class="ph-fill ph-check"
+                                    style="color: var(--color-success);"></i> Priority Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1fr; gap: 4rem; align-items: center;">
+                    <div class="text-left">
+                        <h2>Trusted by Leaders</h2>
+                        <div class="card" style="margin-top: 2rem; background: var(--color-primary); color: white;">
+                            <p style="font-size: 1.1rem; line-height: 1.6; font-style: italic;">
+                                "Before Ledger Pro, our finances were a black box. Now, I have clarity on every dollar.
+                                The tax savings alone paid for the service 10x over."
+                            </p>
+                            <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <div
+                                    style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%;">
+                                </div>
+                                <div>
+                                    <strong style="display: block;">Sarah Jenkins</strong>
+                                    <small style="opacity: 0.8;">CEO, TechStream Inc.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                            <!-- Team Mini Profiles -->
+                            <div class="card" style="padding: 1.5rem; text-align: center;">
+                                <div
+                                    style="width: 80px; height: 80px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                                </div>
+                                <h5>Michael Ross</h5>
+                                <small style="color: var(--color-text-gray);">Head CPA</small>
+                            </div>
+                            <div class="card" style="padding: 1.5rem; text-align: center;">
+                                <div
+                                    style="width: 80px; height: 80px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                                </div>
+                                <h5>Elena Rodriguez</h5>
+                                <small style="color: var(--color-text-gray);">Tax Strategist</small>
+                            </div>
+                            <div class="card" style="padding: 1.5rem; text-align: center;">
+                                <div
+                                    style="width: 80px; height: 80px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                                </div>
+                                <h5>David Chen</h5>
+                                <small style="color: var(--color-text-gray);">CFO Advisor</small>
+                            </div>
+                            <div class="card"
+                                style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                <a href="team.html" class="btn btn-outline btn-sm">Meet Team →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section-padding" style="background: var(--gradient-primary); text-align: center; color: white;">
+            <div class="container">
+                <h2 style="color: white; margin-bottom: 1rem;">Ready to Take Control of Your Finances?</h2>
+                <p
+                    style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join 500+ businesses who trust Ledger Pro for their bookkeeping and tax needs.</p>
+                <a href="contact.html" class="btn" style="background: white; color: var(--color-accent);">Book Free
+                    Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 1rem; display: inline-block;">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span style="color: var(--color-accent);">PRO</span>
+                    </a>
+                    <p style="opacity: 0.8; line-height: 1.6;">
+                        Your trusted financial partner. We provide accuracy, clarity, and strategic insights to help
+                        your business grow.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Bookkeeping</a></li>
+                        <li><a href="services.html">Tax Preparation</a></li>
+                        <li><a href="services.html">Payroll</a></li>
+                        <li><a href="services.html">CFO Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="resources.html">Guides</a></li>
+                        <li><a href="portal.html">Client Portal</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 LEDGER PRO. All rights reserved.</div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>

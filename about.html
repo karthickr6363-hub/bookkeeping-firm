@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LEDGER PRO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <div class="has-dropdown">
+                    <span class="nav-link">Services <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="services.html#bookkeeping" class="dropdown-item">Bookkeeping</a>
+                        <a href="services.html#tax" class="dropdown-item">Tax Preparation</a>
+                        <a href="services.html#payroll" class="dropdown-item">Payroll</a>
+                        <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
+                    </div>
+                </div>
+                <div class="has-dropdown">
+                    <span class="nav-link">Industries <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="industries.html" class="dropdown-item">E-Commerce</a>
+                        <a href="industries.html" class="dropdown-item">Real Estate</a>
+                        <a href="industries.html" class="dropdown-item">Healthcare</a>
+                        <a href="industries.html" class="dropdown-item">Startups</a>
+                    </div>
+                </div>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                    <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+                    <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle RTL">RTL</button>
+                    <a href="register.html" class="btn btn-outline btn-sm">Sign Up</a>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+                </div>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle Menu"><i class="ph ph-list"></i></button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="industries.html" class="mobile-nav-link">Industries</a>
+            <a href="about.html" class="mobile-nav-link active">About</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button id="theme-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
+                <button id="rtl-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+        <!-- Hero -->
+        <section class="section-padding text-center">
+            <div class="container">
+                <h1>Our Mission</h1>
+                <p class="hero-subtitle" style="margin: 1rem auto; max-width: 800px;">
+                    To empower businesses with financial clarity, enabling them to make confident decisions and achieve
+                    sustainable growth.
+                </p>
+                <img src="https://placehold.co/1200x400/e2e8f0/64748b?text=Office+Team+Photo" alt="Ledger Pro Team"
+                    style="width: 100%; border-radius: var(--radius-xl); margin-top: 3rem; box-shadow: var(--shadow-lg);">
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Our Core Values</h2>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="card text-center">
+                        <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-scales"></i></div>
+                        <h3>Integrity</h3>
+                        <p style="color: var(--color-text-gray);">We hold ourselves to the highest ethical standards in
+                            every transaction.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-lightbulb"></i></div>
+                        <h3>Innovation</h3>
+                        <p style="color: var(--color-text-gray);">Leveraging the latest fintech to save you time and
+                            money.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2.5rem; color: var(--color-purple); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-users-three"></i></div>
+                        <h3>Partnership</h3>
+                        <p style="color: var(--color-text-gray);">We're not just vendors; we're an extension of your
+                            team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Preview (simplified) -->
+        <section class="section-padding">
+            <div class="container text-center">
+                <h2>Meet The Experts</h2>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div>
+                        <div
+                            style="width: 150px; height: 150px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                        </div>
+                        <h4>Michael Ross, CPA</h4>
+                        <p style="color: var(--color-text-gray); font-size: 0.9rem;">Founder & CEO</p>
+                    </div>
+                    <div>
+                        <div
+                            style="width: 150px; height: 150px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                        </div>
+                        <h4>Elena Rodriguez</h4>
+                        <p style="color: var(--color-text-gray); font-size: 0.9rem;">Tax Strategy Lead</p>
+                    </div>
+                    <div>
+                        <div
+                            style="width: 150px; height: 150px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                        </div>
+                        <h4>David Chen</h4>
+                        <p style="color: var(--color-text-gray); font-size: 0.9rem;">Senior CFO Advisor</p>
+                    </div>
+                    <div>
+                        <div
+                            style="width: 150px; height: 150px; background: var(--color-bg-light); border-radius: 50%; margin: 0 auto 1rem;">
+                        </div>
+                        <h4>Sarah Smith</h4>
+                        <p style="color: var(--color-text-gray); font-size: 0.9rem;">Payroll Specialist</p>
+                    </div>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <a href="team.html" class="btn btn-outline">View Full Team</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

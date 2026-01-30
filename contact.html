@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LEDGER PRO</title>
+    <meta name="description"
+        content="Get in touch with Ledger Pro for a free consultation. Professional bookkeeping and tax services.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .success-message {
+            display: none;
+            background: #D1FAE5;
+            color: #065F46;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 2rem;
+            border: 1px solid #10B981;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <!-- Dropdown Example -->
+                <div class="has-dropdown">
+                    <span class="nav-link">Services <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="services.html#bookkeeping" class="dropdown-item">Bookkeeping</a>
+                        <a href="services.html#tax" class="dropdown-item">Tax Preparation</a>
+                        <a href="services.html#payroll" class="dropdown-item">Payroll</a>
+                        <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
+                    </div>
+                </div>
+                <div class="has-dropdown">
+                    <span class="nav-link">Industries <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="industries.html" class="dropdown-item">E-Commerce</a>
+                        <a href="industries.html" class="dropdown-item">Real Estate</a>
+                        <a href="industries.html" class="dropdown-item">Healthcare</a>
+                        <a href="industries.html" class="dropdown-item">Startups</a>
+                    </div>
+                </div>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                    <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+                    <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem;"
+                        aria-label="Toggle RTL">RTL</button>
+                    <a href="register.html" class="btn btn-outline btn-sm">Sign Up</a>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="industries.html" class="mobile-nav-link">Industries</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button id="theme-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
+                <button id="rtl-toggle-mobile" class="btn btn-outline"
+                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h1>Get in Touch</h1>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">Ready to streamline your finances? Fill out the
+                        form below or contact us directly.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="card">
+                        <div id="formSuccess" class="success-message">
+                            <strong>Thank you!</strong> We have received your request and will contact you shortly.
+                        </div>
+                        <form id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" id="fullName" class="form-input" required>
+                                <small class="error-msg" style="color:red; display:none;">Name is required</small>
+                            </div>
+
+                            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" class="form-input" required>
+                                    <small class="error-msg" style="color:red; display:none;">Valid email is
+                                        required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" class="form-input" required>
+                                    <small class="error-msg" style="color:red; display:none;">Phone is required</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" id="company" class="form-input">
+                            </div>
+
+                            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="industry" class="form-label">Industry</label>
+                                    <select id="industry" class="form-select">
+                                        <option value="">Select Industry...</option>
+                                        <option value="ecommerce">E-Commerce</option>
+                                        <option value="realestate">Real Estate</option>
+                                        <option value="professional">Professional Services</option>
+                                        <option value="construction">Construction</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="technology">Technology/SaaS</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="software" class="form-label">Current Software</label>
+                                    <select id="software" class="form-select">
+                                        <option value="">Select Software...</option>
+                                        <option value="qbo">QuickBooks Online</option>
+                                        <option value="xero">Xero</option>
+                                        <option value="freshbooks">FreshBooks</option>
+                                        <option value="wave">Wave</option>
+                                        <option value="spreadsheets">Spreadsheets</option>
+                                        <option value="none">None/New Business</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="transactions" class="form-label">Monthly Transactions</label>
+                                <select id="transactions" class="form-select">
+                                    <option value="under100">Under 100</option>
+                                    <option value="100-500">100 - 500</option>
+                                    <option value="500-1000">500 - 1000</option>
+                                    <option value="1000+">1000+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Services Interested In</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item"><input type="checkbox" name="service"
+                                            value="bookkeeping"> Bookkeeping</label>
+                                    <label class="checkbox-item"><input type="checkbox" name="service" value="tax"> Tax
+                                        Preparation</label>
+                                    <label class="checkbox-item"><input type="checkbox" name="service" value="payroll">
+                                        Payroll</label>
+                                    <label class="checkbox-item"><input type="checkbox" name="service" value="cfo"> CFO
+                                        Advisory</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" class="form-textarea" rows="4"
+                                    placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-item">
+                                <input type="checkbox" id="consent" required>
+                                <label for="consent" style="font-size: 0.9rem;">I agree to the <a href="#"
+                                        style="color:var(--color-accent);">Privacy Policy</a> and consent to being
+                                    contacted.</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Request Free
+                                Consultation</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info & Map -->
+                    <div>
+                        <div class="card" style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1.5rem;">Contact Information</h3>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                    <i class="ph-fill ph-map-pin"
+                                        style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                    <div>
+                                        <strong>Headquarters</strong><br>
+                                        123 Financial District Blvd<br>
+                                        New York, NY 10005
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                    <i class="ph-fill ph-envelope"
+                                        style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                    <div>
+                                        <strong>Email</strong><br>
+                                        <a href="mailto:hello@ledgerpro.com"
+                                            style="color: inherit; text-decoration: none;">hello@ledgerpro.com</a>
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                    <i class="ph-fill ph-phone"
+                                        style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                    <div>
+                                        <strong>Phone</strong><br>
+                                        <a href="tel:+15551234567" style="color: inherit; text-decoration: none;">(555)
+                                            123-4567</a>
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                    <i class="ph-fill ph-clock"
+                                        style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                    <div>
+                                        <strong>Business Hours</strong><br>
+                                        Mon - Fri: 9:00 AM - 6:00 PM EST
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Map Embed Mockup -->
+                        <div
+                            style="background: #e5e7eb; height: 300px; border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: var(--color-text-gray);">
+                            <div class="text-center">
+                                <i class="ph-fill ph-map-trifold" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <p>Google Map Embed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 1rem; display: inline-block;">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span style="color: var(--color-accent);">PRO</span>
+                    </a>
+                    <p style="opacity: 0.8; line-height: 1.6;">
+                        Your trusted financial partner. We provide accuracy, clarity, and strategic insights to help
+                        your business grow.
+                    </p>
+                </div>
+                <!-- ... Repeated Footer Content ... -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Bookkeeping</a></li>
+                        <li><a href="services.html">Tax Preparation</a></li>
+                        <li><a href="services.html">Payroll</a></li>
+                        <li><a href="services.html">CFO Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="resources.html">Guides</a></li>
+                        <li><a href="portal.html">Client Portal</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 LEDGER PRO. All rights reserved.</div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+
+</html>
