@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | LEDGER PRO</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/reset.css">
@@ -29,7 +33,40 @@
             display: flex;
             flex-direction: column;
             box-shadow: 4px 0 24px rgba(0, 0, 0, 0.05);
-            z-index: 10;
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .mobile-dashboard-toggle {
+            display: none;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.5rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            align-items: center;
+            justify-content: center;
         }
 
         .sidebar-logo {
@@ -149,7 +186,28 @@
             }
 
             .sidebar {
-                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 260px;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .mobile-dashboard-toggle {
+                display: flex;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -158,7 +216,7 @@
 <body>
     <div class="dashboard-layout">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="dashboardSidebar">
             <a href="index.html" class="sidebar-logo">
                 <i class="ph-fill ph-chart-polar"></i>
                 LEDGER PRO
@@ -175,10 +233,18 @@
             </div>
         </aside>
 
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
         <!-- Main Content -->
         <main class="main-content">
             <div class="top-bar">
-                <h1 style="font-size: 1.5rem;">Financial Overview</h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-dashboard-toggle" id="sidebarToggle">
+                        <i class="ph ph-list"></i>
+                    </button>
+                    <h1 style="font-size: 1.5rem;">Financial Overview</h1>
+                </div>
                 <div class="user-menu">
                     <button class="btn btn-outline btn-sm"><i class="ph ph-bell"></i></button>
                     <div
@@ -299,6 +365,23 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Sidebar Toggle Logic
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('dashboardSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            if (sidebarToggle && sidebar && overlay) {
+                sidebarToggle.addEventListener('click', () => {
+                    sidebar.classList.add('active');
+                    overlay.classList.add('active');
+                });
+
+                overlay.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            }
+
             // Main Chart
             const mainCtx = document.getElementById('dashboardMainChart');
             if (mainCtx) {
@@ -339,6 +422,62 @@
             }
         });
     </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span>PRO</span>
+                    </a>
+                    <p style="opacity: 0.8; line-height: 1.6;">
+                        Your trusted financial partner. We provide accuracy, clarity, and strategic insights to help
+                        your business grow.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Bookkeeping</a></li>
+                        <li><a href="services.html">Tax Preparation</a></li>
+                        <li><a href="services.html">Payroll</a></li>
+                        <li><a href="services.html">CFO Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="resources.html">Guides</a></li>
+                        <li><a href="portal.html">Client Portal</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 LEDGER PRO. All rights reserved.</div>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -4,17 +4,76 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('.mobile-menu');
     const toggleIcon = mobileToggle ? mobileToggle.querySelector('i') : null;
 
-    if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            // Change icon
-            if (mobileMenu.classList.contains('active')) {
-                if (toggleIcon) toggleIcon.classList.replace('ph-list', 'ph-x');
-            } else {
-                if (toggleIcon) toggleIcon.classList.replace('ph-x', 'ph-list');
+    // Create/Reference Overlay
+    let overlay = document.querySelector('.mobile-menu-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    const closeMenu = () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (toggleIcon) toggleIcon.classList.replace('ph-x', 'ph-list');
+        // Close all mobile dropdowns
+        document.querySelectorAll('.mobile-dropdown-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.mobile-nav-link i.ph-minus').forEach(icon => icon.classList.replace('ph-minus', 'ph-plus'));
+    };
+
+    const mobileToggles = document.querySelectorAll('.mobile-toggle');
+    if (mobileToggles.length > 0 && mobileMenu) {
+        mobileToggles.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isActive = mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active', isActive);
+
+                if (isActive) {
+                    if (toggleIcon) toggleIcon.classList.replace('ph-list', 'ph-x');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Close on overlay click
+        overlay.addEventListener('click', closeMenu);
+
+        // Close on Esc key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
             }
         });
     }
+
+    // 1.1 Mobile Dropdown Accorions
+    const mobileDropdownToggles = document.querySelectorAll('[data-toggle]');
+    mobileDropdownToggles.forEach(toggler => {
+        toggler.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = toggler.getAttribute('data-toggle');
+            const content = document.getElementById(targetId);
+            const icon = toggler.querySelector('i');
+
+            if (content) {
+                const isActive = content.classList.contains('active');
+
+                // Close others if desired (optional, keeping it simple for now)
+
+                content.classList.toggle('active');
+                if (icon) {
+                    if (icon.classList.contains('ph-plus')) {
+                        icon.classList.replace('ph-plus', 'ph-minus');
+                    } else {
+                        icon.classList.replace('ph-minus', 'ph-plus');
+                    }
+                }
+            }
+        });
+    });
 
     // 2. Sticky Header
     const header = document.querySelector('.header');

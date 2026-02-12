@@ -35,7 +35,7 @@
 
 .hero-subtitle {
     font-size: 1.125rem;
-    color: var(--color-text-gray);
+    color: var(--color-text-muted);
     margin-bottom: 2rem;
     max-width: 500px;
 }
@@ -173,17 +173,17 @@
     border-bottom: 2px solid transparent;
     padding: 1rem 1.5rem;
     font-weight: 600;
-    color: var(--color-text-gray);
+    color: var(--color-text-muted);
     cursor: pointer;
     transition: all var(--transition-fast);
     font-size: 1.1rem;
 }
 
 .tab-btn:hover {
-    color: var(--color-primary);
+    color: var(--color-text-heading);
 }
 
 .tab-btn.active {
-    color: var(--color-primary);
+    color: var(--color-text-heading);
     border-bottom-color: var(--color-accent);
 }

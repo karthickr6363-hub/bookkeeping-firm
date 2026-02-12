@@ -60,6 +60,20 @@
     display: none !important;
 }
 
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
 /* Typography */
 h1,
 h2,
@@ -69,7 +83,7 @@ h5,
 h6 {
     font-weight: 700;
     line-height: 1.2;
-    color: var(--color-primary);
+    color: var(--color-text-heading);
 }
 
 h1 {
@@ -192,4 +206,19 @@ h4 {
 .bg-dark {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+/* Ensure contrast in dark sections */
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6 {
+    color: var(--color-white) !important;
+}
+
+.bg-dark p,
+.bg-dark .hero-subtitle {
+    color: rgba(255, 255, 255, 0.8) !important;
 }

@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | LEDGER PRO</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/reset.css">
@@ -58,11 +62,40 @@
             <button class="mobile-toggle" aria-label="Toggle Menu"><i class="ph ph-list"></i></button>
         </div>
         <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <a href="index.html" class="logo">
+                    <i class="ph-fill ph-chart-polar"></i>
+                    LEDGER <span>PRO</span>
+                </a>
+                <button class="mobile-toggle" style="display: block; position: static;">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
             <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            <div class="mobile-dropdown">
+                <div class="mobile-nav-link d-flex" data-toggle="mobile-services">
+                    Services <i class="ph ph-plus"></i>
+                </div>
+                <div class="mobile-dropdown-content" id="mobile-services">
+                    <a href="services.html#bookkeeping">Bookkeeping</a>
+                    <a href="services.html#tax">Tax Preparation</a>
+                    <a href="services.html#payroll">Payroll</a>
+                    <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <div class="mobile-nav-link d-flex" data-toggle="mobile-industries">
+                    Industries <i class="ph ph-plus"></i>
+                </div>
+                <div class="mobile-dropdown-content" id="mobile-industries">
+                    <a href="industries.html">E-Commerce</a>
+                    <a href="industries.html">Real Estate</a>
+                    <a href="industries.html">Healthcare</a>
+                    <a href="industries.html">Startups</a>
+                </div>
+            </div>
             <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
-            <a href="services.html" class="mobile-nav-link">Services</a>
-            <a href="industries.html" class="mobile-nav-link">Industries</a>
             <a href="about.html" class="mobile-nav-link active">About</a>
             <a href="contact.html" class="mobile-nav-link">Contact</a>
 
@@ -97,7 +130,7 @@
                 </div>
                 <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
                     <div class="card text-center">
-                        <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 1rem;"><i
+                        <div style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem;"><i
                                 class="ph-fill ph-scales"></i></div>
                         <h3>Integrity</h3>
                         <p style="color: var(--color-text-gray);">We hold ourselves to the highest ethical standards in
@@ -162,6 +195,63 @@
             </div>
         </section>
     </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="padding-right: 2rem;">
+                    <a href="index.html" class="logo">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span>PRO</span>
+                    </a>
+                    <p style="opacity: 0.8; line-height: 1.6;">
+                        Your trusted financial partner. We provide accuracy, clarity, and strategic insights to help
+                        your business grow.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Bookkeeping</a></li>
+                        <li><a href="services.html">Tax Preparation</a></li>
+                        <li><a href="services.html">Payroll</a></li>
+                        <li><a href="services.html">CFO Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="resources.html">Guides</a></li>
+                        <li><a href="portal.html">Client Portal</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 LEDGER PRO. All rights reserved.</div>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"
+                            style="font-size: 1.25rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/main.js"></script>
 </body>
 
