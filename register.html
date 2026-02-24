@@ -17,14 +17,21 @@
     <!-- Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
+        html {
+            overflow-y: auto !important;
+        }
+
+        body {
+            overflow: visible !important;
+        }
+
         .login-page {
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             background: var(--color-bg-light);
             position: relative;
-            overflow: hidden;
             padding: 2rem;
             transition: background var(--transition-normal);
         }
@@ -66,9 +73,9 @@
 
         .login-container {
             width: 100%;
-            max-width: 1150px;
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
             background: var(--color-card-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -77,6 +84,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-xl);
             z-index: 1;
+            margin: auto;
         }
 
         [data-theme="dark"] .login-container {
@@ -85,13 +93,7 @@
         }
 
         .login-visual {
-            position: relative;
-            background: url('https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            padding: 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            color: white;
+            display: none;
         }
 
         .login-visual::before {
@@ -112,22 +114,6 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            max-height: 100vh;
-            overflow-y: auto;
-        }
-
-        /* Custom Scrollbar for the form container */
-        .login-form-container::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .login-form-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .login-form-container::-webkit-scrollbar-thumb {
-            background: var(--color-bg-light);
-            border-radius: 2px;
         }
 
         .form-group {
@@ -261,8 +247,8 @@
 
         @media (max-width: 1024px) {
             .login-container {
-                grid-template-columns: 1fr;
-                max-width: 550px;
+                width: 100%;
+                max-width: 450px;
             }
 
             .login-visual {
@@ -270,12 +256,23 @@
             }
 
             .login-form-container {
-                padding: 3rem 2rem;
-                max-height: none;
+                padding: 3rem 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .login-page {
+                padding: 1rem;
             }
 
-            .mobile-logo {
-                display: flex !important;
+            .login-form-container {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-form-container {
+                padding: 2rem 1.25rem;
             }
         }
     </style>
@@ -314,6 +311,12 @@
         <div class="bg-blob blob-1"></div>
         <div class="bg-blob blob-2"></div>
 
+        <button id="theme-toggle" class="btn btn-outline"
+            style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1000; padding: 0.75rem; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;"
+            aria-label="Toggle Theme">
+            <i class="ph ph-moon"></i>
+        </button>
+
         <div class="login-container">
             <!-- Left Side: Visual -->
             <div class="login-visual">
@@ -331,9 +334,9 @@
 
             <!-- Right Side: Form -->
             <div class="login-form-container">
-                <div style="margin-bottom: 2rem;">
-                    <a href="index.html" class="logo mobile-logo"
-                        style="margin-bottom: 2rem; color: var(--color-text-heading); display: none; justify-content: center;">
+                <div style="margin-bottom: 2rem; text-align: center;">
+                    <a href="index.html" class="logo"
+                        style="margin-bottom: 2rem; color: var(--color-text-heading); display: flex; justify-content: center;">
                         <i class="ph-fill ph-chart-polar"></i>
                         LEDGER <span style="color: var(--color-accent);">PRO</span>
                     </a>
@@ -439,6 +442,7 @@
         </div>
     </div>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
