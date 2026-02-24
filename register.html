@@ -39,59 +39,166 @@
 </head>
 
 <body>
-    <div class="login-page">
-        <div class="login-card">
-            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem;">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
                 <i class="ph-fill ph-chart-polar"></i>
                 LEDGER <span>PRO</span>
             </a>
+            <button class="mobile-toggle" style="display: block; position: static;">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="industries.html" class="mobile-nav-link">Industries</a>
+        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
 
-            <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Create an Account</h1>
-            <p style="color: var(--color-text-gray); margin-bottom: 2rem;">Start your journey to financial clarity.</p>
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+            <button id="theme-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('theme-toggle').click()">Theme</button>
+            <button id="rtl-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+        </div>
+    </div>
+    <div class="login-page" style="padding: 0; background: var(--color-white);">
+        <div style="display: flex; min-height: 100vh; width: 100%; overflow: hidden;">
+            <!-- Left Side: Image -->
+            <div style="flex: 1; display: none; position: relative; background: url('https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;"
+                class="split-image-container">
+                <style>
+                    @media (min-width: 1024px) {
+                        .split-image-container {
+                            display: block !important;
+                        }
+                    }
+                </style>
+                <div
+                    style="position: absolute; inset: 0; background: linear-gradient(rgba(10, 37, 64, 0.4), rgba(10, 37, 64, 0.7));">
+                </div>
+                <div style="position: absolute; bottom: 4rem; left: 4rem; right: 4rem; color: white;">
+                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Scale with Confidence.</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; max-width: 400px;">Join 500+ businesses who trust Ledger
+                        Pro for their financial growth and compliance.</p>
+                </div>
+            </div>
 
-            <form id="registerForm" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div style="margin-bottom: 1rem; text-align: left;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name</label>
-                        <input type="text" class="form-input" required>
+            <!-- Right Side: Form -->
+            <div
+                style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; background: var(--color-bg-light);">
+                <div class="login-card"
+                    style="width: 100%; max-width: 550px; box-shadow: var(--shadow-2xl); border: 1px solid rgba(0,0,0,0.05);">
+                    <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span>PRO</span>
+                    </a>
+
+                    <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem; letter-spacing: -0.02em;">Create an Account
+                    </h1>
+                    <p style="color: var(--color-text-gray); margin-bottom: 2rem;">Start your journey to financial
+                        clarity.</p>
+
+                    <!-- Social Signups -->
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="btn btn-outline"
+                            style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.75rem; font-weight: 500;">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4"
+                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                                <path fill="#34A853"
+                                    d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.331C2.438 15.983 5.482 18 9 18z" />
+                                <path fill="#FBBC05"
+                                    d="M3.964 10.706c-.18-.54-.282-1.117-.282-1.706s.102-1.166.282-1.706V4.963H.957C.347 6.179 0 7.551 0 9s.347 2.821.957 4.037l3.007-2.331z" />
+                                <path fill="#EA4335"
+                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.582C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.963L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z" />
+                            </svg>
+                            Google
+                        </button>
+                        <button class="btn btn-outline"
+                            style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.75rem; font-weight: 500;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.791-4.667 4.532-4.667 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            Facebook
+                        </button>
                     </div>
-                    <div style="margin-bottom: 1rem; text-align: left;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name</label>
-                        <input type="text" class="form-input" required>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; color: var(--color-text-gray); font-size: 0.85rem;">
+                        <div style="flex: 1; height: 1px; background: var(--color-bg-light);"></div>
+                        OR WITH EMAIL
+                        <div style="flex: 1; height: 1px; background: var(--color-bg-light);"></div>
                     </div>
-                </div>
 
-                <div style="margin-bottom: 1rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Work Email</label>
-                    <input type="email" class="form-input" placeholder="you@company.com" required>
-                </div>
+                    <form id="registerForm" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="text-align: left;">
+                                <label
+                                    style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">First
+                                    Name</label>
+                                <input type="text" class="form-input" required placeholder="John"
+                                    style="padding: 0.75rem;">
+                            </div>
+                            <div style="text-align: left;">
+                                <label
+                                    style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">Last
+                                    Name</label>
+                                <input type="text" class="form-input" required placeholder="Doe"
+                                    style="padding: 0.75rem;">
+                            </div>
+                        </div>
 
-                <div style="margin-bottom: 1rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Company Name</label>
-                    <input type="text" class="form-input" required>
-                </div>
+                        <div style="margin-bottom: 1rem; text-align: left;">
+                            <label
+                                style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">Work
+                                Email</label>
+                            <input type="email" class="form-input" placeholder="you@company.com" required
+                                style="padding: 0.75rem;">
+                        </div>
 
-                <div style="margin-bottom: 1.5rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Password</label>
-                    <input type="password" class="form-input" placeholder="••••••••" required>
-                    <small style="color: var(--color-text-gray);">Must be at least 8 characters.</small>
-                </div>
+                        <div style="margin-bottom: 1rem; text-align: left;">
+                            <label
+                                style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">Company
+                                Name</label>
+                            <input type="text" class="form-input" placeholder="Acme Inc." required
+                                style="padding: 0.75rem;">
+                        </div>
 
-                <div style="margin-bottom: 1.5rem; text-align: left; display: flex; align-items: start; gap: 0.5rem;">
-                    <input type="checkbox" id="terms" style="margin-top: 0.25rem;" required>
-                    <label for="terms" style="font-size: 0.9rem; line-height: 1.4;">I agree to the <a href="#"
-                            style="color: var(--color-accent);">Terms of Service</a> and <a href="#"
-                            style="color: var(--color-accent);">Privacy Policy</a>.</label>
-                </div>
+                        <div style="margin-bottom: 1.5rem; text-align: left;">
+                            <label
+                                style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">Password</label>
+                            <input type="password" class="form-input" placeholder="••••••••" required
+                                style="padding: 0.75rem;">
+                            <small style="color: var(--color-text-gray); font-size: 0.75rem;">Must be at least 8
+                                characters.</small>
+                        </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1.5rem;">Create
-                    Account</button>
+                        <div
+                            style="margin-bottom: 1.5rem; text-align: left; display: flex; align-items: start; gap: 0.6rem;">
+                            <input type="checkbox" id="terms" style="margin-top: 0.2rem; width: auto;" required>
+                            <label for="terms"
+                                style="font-size: 0.85rem; line-height: 1.4; color: var(--color-text-gray);">
+                                I agree to the <a href="#"
+                                    style="color: var(--color-accent); font-weight: 600;">Terms</a> and <a href="#"
+                                    style="color: var(--color-accent); font-weight: 600;">Privacy Policy</a>.
+                            </label>
+                        </div>
 
-                <div style="font-size: 0.95rem;">
-                    Already have an account? <a href="portal.html"
-                        style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Sign In</a>
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; padding: 1rem; font-weight: 600; background: var(--gradient-primary); border: none; box-shadow: var(--shadow-glow);">
+                            Create Professional Account
+                        </button>
+
+                        <div style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--color-text-gray);">
+                            Already have an account? <a href="portal.html"
+                                style="color: var(--color-accent); text-decoration: none; font-weight: 700;">Sign In</a>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     <!-- Footer -->

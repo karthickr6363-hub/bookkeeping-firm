@@ -21,8 +21,14 @@
     <style>
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 260px 1fr;
+            grid-template-columns: 1fr;
             min-height: 100vh;
+        }
+
+        @media (min-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 260px 1fr;
+            }
         }
 
         .sidebar {
@@ -137,7 +143,7 @@
 
         .stat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }
@@ -214,6 +220,30 @@
 </head>
 
 <body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+            <button class="mobile-toggle" style="display: block; position: static;">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="industries.html" class="mobile-nav-link">Industries</a>
+        <a href="dashboard.html" class="mobile-nav-link active">Dashboard</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+            <button id="theme-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('theme-toggle').click()">Theme</button>
+            <button id="rtl-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+        </div>
+    </div>
     <div class="dashboard-layout">
         <!-- Sidebar -->
         <aside class="sidebar" id="dashboardSidebar">
@@ -311,54 +341,59 @@
                         All</a>
                 </div>
                 <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
-                        <thead>
-                            <tr style="border-bottom: 2px solid var(--color-bg-light); text-align: left;">
-                                <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Date</th>
-                                <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Description
-                                </th>
-                                <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Category
-                                </th>
-                                <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Status</th>
-                                <th
-                                    style="padding: 1rem; color: var(--color-text-gray); font-weight: 600; text-align: right;">
-                                    Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom: 1px solid var(--color-bg-light);">
-                                <td style="padding: 1rem;">Jan 28, 2026</td>
-                                <td style="padding: 1rem; font-weight: 500;">Stripe Payout</td>
-                                <td style="padding: 1rem;">Income</td>
-                                <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
-                                <td style="padding: 1rem; text-align: right; color: var(--color-success);">+$4,250.00
-                                </td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--color-bg-light);">
-                                <td style="padding: 1rem;">Jan 27, 2026</td>
-                                <td style="padding: 1rem; font-weight: 500;">AWS Web Services</td>
-                                <td style="padding: 1rem;">Software</td>
-                                <td style="padding: 1rem;"><span class="badge badge-blue">Pending</span></td>
-                                <td style="padding: 1rem; text-align: right;">-$124.50</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--color-bg-light);">
-                                <td style="padding: 1rem;">Jan 26, 2026</td>
-                                <td style="padding: 1rem; font-weight: 500;">WeWork Office</td>
-                                <td style="padding: 1rem;">Rent</td>
-                                <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
-                                <td style="padding: 1rem; text-align: right;">-$850.00</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--color-bg-light);">
-                                <td style="padding: 1rem;">Jan 25, 2026</td>
-                                <td style="padding: 1rem; font-weight: 500;">Gusto Payroll</td>
-                                <td style="padding: 1rem;">Payroll</td>
-                                <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
-                                <td style="padding: 1rem; text-align: right;">-$12,400.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="overflow-x: auto; width: 100%;">
+                        <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--color-bg-light); text-align: left;">
+                                    <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Date
+                                    </th>
+                                    <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">
+                                        Description
+                                    </th>
+                                    <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Category
+                                    </th>
+                                    <th style="padding: 1rem; color: var(--color-text-gray); font-weight: 600;">Status
+                                    </th>
+                                    <th
+                                        style="padding: 1rem; color: var(--color-text-gray); font-weight: 600; text-align: right;">
+                                        Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--color-bg-light);">
+                                    <td style="padding: 1rem;">Jan 28, 2026</td>
+                                    <td style="padding: 1rem; font-weight: 500;">Stripe Payout</td>
+                                    <td style="padding: 1rem;">Income</td>
+                                    <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
+                                    <td style="padding: 1rem; text-align: right; color: var(--color-success);">
+                                        +$4,250.00
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-bg-light);">
+                                    <td style="padding: 1rem;">Jan 27, 2026</td>
+                                    <td style="padding: 1rem; font-weight: 500;">AWS Web Services</td>
+                                    <td style="padding: 1rem;">Software</td>
+                                    <td style="padding: 1rem;"><span class="badge badge-blue">Pending</span></td>
+                                    <td style="padding: 1rem; text-align: right;">-$124.50</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-bg-light);">
+                                    <td style="padding: 1rem;">Jan 26, 2026</td>
+                                    <td style="padding: 1rem; font-weight: 500;">WeWork Office</td>
+                                    <td style="padding: 1rem;">Rent</td>
+                                    <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
+                                    <td style="padding: 1rem; text-align: right;">-$850.00</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-bg-light);">
+                                    <td style="padding: 1rem;">Jan 25, 2026</td>
+                                    <td style="padding: 1rem; font-weight: 500;">Gusto Payroll</td>
+                                    <td style="padding: 1rem;">Payroll</td>
+                                    <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
+                                    <td style="padding: 1rem; text-align: right;">-$12,400.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
         </main>
     </div>
@@ -443,15 +478,6 @@
                         <li><a href="team.html">Our Team</a></li>
                         <li><a href="contact.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="services.html">Bookkeeping</a></li>
-                        <li><a href="services.html">Tax Preparation</a></li>
-                        <li><a href="services.html">Payroll</a></li>
-                        <li><a href="services.html">CFO Advisory</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

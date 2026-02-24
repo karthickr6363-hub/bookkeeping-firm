@@ -27,6 +27,13 @@ html:focus-within {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;

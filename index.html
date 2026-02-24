@@ -72,6 +72,30 @@
 </head>
 
 <body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-chart-polar"></i>
+                LEDGER <span>PRO</span>
+            </a>
+            <button class="mobile-toggle" style="display: block; position: static;">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="industries.html" class="mobile-nav-link">Industries</a>
+        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+            <button id="theme-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('theme-toggle').click()">Theme</button>
+            <button id="rtl-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+        </div>
+    </div>
 
     <!-- Header -->
     <header class="header">
@@ -84,25 +108,7 @@
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="home2.html" class="nav-link">Home 2</a>
-                <!-- Dropdown Example -->
-                <div class="has-dropdown">
-                    <span class="nav-link">Services <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
-                    <div class="dropdown-menu">
-                        <a href="services.html#bookkeeping" class="dropdown-item">Bookkeeping</a>
-                        <a href="services.html#tax" class="dropdown-item">Tax Preparation</a>
-                        <a href="services.html#payroll" class="dropdown-item">Payroll</a>
-                        <a href="services.html#cfo" class="dropdown-item">CFO Advisory</a>
-                    </div>
-                </div>
-                <div class="has-dropdown">
-                    <span class="nav-link">Industries <i class="ph ph-caret-down" style="font-size: 0.8em;"></i></span>
-                    <div class="dropdown-menu">
-                        <a href="industries.html" class="dropdown-item">E-Commerce</a>
-                        <a href="industries.html" class="dropdown-item">Real Estate</a>
-                        <a href="industries.html" class="dropdown-item">Healthcare</a>
-                        <a href="industries.html" class="dropdown-item">Startups</a>
-                    </div>
-                </div>
+                <a href="industries.html" class="nav-link">Industries</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
@@ -122,51 +128,6 @@
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <div class="mobile-menu-header">
-                <a href="index.html" class="logo">
-                    <i class="ph-fill ph-chart-polar"></i>
-                    LEDGER <span>PRO</span>
-                </a>
-                <button class="mobile-toggle" style="display: block; position: static;">
-                    <i class="ph ph-x"></i>
-                </button>
-            </div>
-            <a href="index.html" class="mobile-nav-link">Home</a>
-            <a href="home2.html" class="mobile-nav-link">Home 2</a>
-            <div class="mobile-dropdown">
-                <div class="mobile-nav-link d-flex" data-toggle="mobile-services">
-                    Services <i class="ph ph-plus"></i>
-                </div>
-                <div class="mobile-dropdown-content" id="mobile-services">
-                    <a href="services.html#bookkeeping">Bookkeeping</a>
-                    <a href="services.html#tax">Tax Preparation</a>
-                    <a href="services.html#payroll">Payroll</a>
-                    <a href="services.html#cfo">CFO Advisory</a>
-                </div>
-            </div>
-            <div class="mobile-dropdown">
-                <div class="mobile-nav-link d-flex" data-toggle="mobile-industries">
-                    Industries <i class="ph ph-plus"></i>
-                </div>
-                <div class="mobile-dropdown-content" id="mobile-industries">
-                    <a href="industries.html">E-Commerce</a>
-                    <a href="industries.html">Real Estate</a>
-                    <a href="industries.html">Healthcare</a>
-                    <a href="industries.html">Startups</a>
-                </div>
-            </div>
-            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
-
-            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-                <button id="theme-toggle-mobile" class="btn btn-outline"
-                    onclick="document.getElementById('theme-toggle').click()">Theme</button>
-                <button id="rtl-toggle-mobile" class="btn btn-outline"
-                    onclick="document.getElementById('rtl-toggle').click()">RTL</button>
-            </div>
-        </div>
     </header>
 
     <!-- Main Content -->
@@ -185,7 +146,7 @@
 
                     <div class="hero-actions">
                         <a href="contact.html" class="btn btn-primary btn-lg">Schedule Free Consultation</a>
-                        <a href="services.html" class="btn btn-outline btn-lg">View Our Services</a>
+                        <a href="industries.html" class="btn btn-outline btn-lg">How We Help</a>
                     </div>
 
                     <div style="display: flex; gap: 2rem; opacity: 0.7;">
@@ -279,92 +240,48 @@
             </div>
         </section>
 
-
-        <!-- Services Tabs -->
-        <section class="section-padding bg-light" id="services">
+        <!-- Precision Bookkeeping Section -->
+        <section class="section-padding bg-light">
             <div class="container">
-                <div class="text-center" style="margin-bottom: 3rem;">
-                    <h2>Comprehensive Financial Services</h2>
-                    <p class="hero-subtitle" style="margin: 1rem auto;">Everything you need to manage your business
-                        finances under one roof.</p>
-                </div>
-
-                <div class="services-tabs">
-                    <div class="tab-nav">
-                        <button class="tab-btn active" onclick="openTab(event, 'tab-bookkeeping')">Bookkeeping</button>
-                        <button class="tab-btn" onclick="openTab(event, 'tab-tax')">Tax Preparation</button>
-                        <button class="tab-btn" onclick="openTab(event, 'tab-payroll')">Payroll</button>
-                        <button class="tab-btn" onclick="openTab(event, 'tab-cfo')">CFO Advisory</button>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 2rem; align-items: center;">
+                    <div class="fade-in">
+                        <h2 style="margin-bottom: 1.5rem;">Precision Bookkeeping</h2>
+                        <p
+                            style="color: var(--color-text-gray); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                            Stop drowning in receipts. We categorize every transaction, reconcile accounts, and provide
+                            monthly financial statements so you're always audit-ready.
+                        </p>
+                        <ul style="list-style: none; margin-bottom: 2.5rem;">
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                                <i class="ph-fill ph-check-circle"
+                                    style="color: var(--color-success); font-size: 1.5rem;"></i>
+                                <span>Monthly Reconciliations</span>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                                <i class="ph-fill ph-check-circle"
+                                    style="color: var(--color-success); font-size: 1.5rem;"></i>
+                                <span>P&L and Balance Sheet</span>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                                <i class="ph-fill ph-check-circle"
+                                    style="color: var(--color-success); font-size: 1.5rem;"></i>
+                                <span>Accounts Payable/Receivable</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary btn-lg">Learn More</a>
                     </div>
-
-                    <!-- Tab Content -->
-                    <div id="tab-bookkeeping" class="tab-content fade-in" style="display: block;">
-                        <div class="services-grid">
-                            <div>
-                                <h3 style="margin-bottom: 1rem;">Precision Bookkeeping</h3>
-                                <p style="margin-bottom: 1.5rem; color: var(--color-text-gray);">
-                                    Stop drowning in receipts. We categorize every transaction, reconcile accounts, and
-                                    provide monthly financial statements so you're always audit-ready.
-                                </p>
-                                <ul style="list-style: none; margin-bottom: 2rem;">
-                                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle"
-                                            style="color: var(--color-success); margin-right: 0.5rem;"></i> Monthly
-                                        Reconciliations</li>
-                                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle"
-                                            style="color: var(--color-success); margin-right: 0.5rem;"></i> P&L and
-                                        Balance Sheet</li>
-                                    <li><i class="ph-fill ph-check-circle"
-                                            style="color: var(--color-success); margin-right: 0.5rem;"></i> Accounts
-                                        Payable/Receivable</li>
-                                </ul>
-                                <a href="services.html" class="btn btn-primary">Learn More</a>
-                            </div>
-                            <div class="card">
-                                <!-- Mockup image/illustration -->
-                                <div
-                                    style="background: var(--color-bg-light); height: 200px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
-                                    <i class="ph-fill ph-notebook"
-                                        style="font-size: 4rem; color: var(--color-accent);"></i>
-                                </div>
-                            </div>
+                    <div class="slide-in-right">
+                        <div
+                            style="position: relative; border-radius: var(--radius-2xl); overflow: hidden; box-shadow: var(--shadow-2xl); border: 8px solid white;">
+                            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=800&h=600"
+                                alt="Professional Bookkeeping" style="width: 100%; height: auto; display: block;">
                         </div>
                     </div>
-
-                    <div id="tab-tax" class="tab-content fade-in" style="display: none;">
-                        <div class="services-grid">
-                            <div>
-                                <h3 style="margin-bottom: 1rem;">Strategic Tax Filing</h3>
-                                <p style="margin-bottom: 1.5rem; color: var(--color-text-gray);">
-                                    Don't just pay taxes—optimize them. Our CPAs find every deduction and credit you
-                                    deserve.
-                                </p>
-                                <a href="services.html" class="btn btn-primary">Start Saving</a>
-                            </div>
-                            <div class="card">
-                                <div
-                                    style="background: var(--color-bg-light); height: 200px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
-                                    <i class="ph-fill ph-receipt"
-                                        style="font-size: 4rem; color: var(--color-purple);"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Other tabs placeholders for brevity, script handles show/hide -->
-                    <div id="tab-payroll" class="tab-content fade-in" style="display: none;">
-                        <div class="text-center">
-                            <h3>Payroll Services Content</h3>
-                        </div>
-                    </div>
-                    <div id="tab-cfo" class="tab-content fade-in" style="display: none;">
-                        <div class="text-center">
-                            <h3>CFO Advisory Content</h3>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
+
 
         <!-- Interactive Dashboard Demo -->
         <section class="section-padding">
@@ -385,8 +302,7 @@
                             <button class="btn btn-sm btn-outline">Reports</button>
                         </div>
 
-                        <div class="grid"
-                            style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 2rem;">
                             <!-- Chart 1 -->
                             <div>
                                 <h5>Quarterly Profit</h5>
@@ -402,7 +318,7 @@
                         </div>
 
                         <!-- Transaction Table Mockup -->
-                        <div style="overflow-x: auto; margin-top: 2rem;">
+                        <div style="overflow-x: auto; margin-top: 2rem; width: 100%;">
                             <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
                                 <thead>
                                     <tr
@@ -420,14 +336,16 @@
                                         <td style="padding: 1rem;">Client Payment - Acme Corp</td>
                                         <td style="padding: 1rem;">Income</td>
                                         <td style="padding: 1rem; color: var(--color-success);">+$4,500.00</td>
-                                        <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span></td>
+                                        <td style="padding: 1rem;"><span class="badge badge-success">Cleared</span>
+                                        </td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--color-bg-light);">
                                         <td style="padding: 1rem;">Oct 23, 2025</td>
                                         <td style="padding: 1rem;">Software Subscription</td>
                                         <td style="padding: 1rem;">Expense</td>
                                         <td style="padding: 1rem; color: var(--color-text-dark);">-$129.00</td>
-                                        <td style="padding: 1rem;"><span class="badge badge-blue">Pending</span></td>
+                                        <td style="padding: 1rem;"><span class="badge badge-blue">Pending</span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -447,7 +365,7 @@
                 </div>
 
                 <div class="grid"
-                    style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; position: relative;">
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 2rem; position: relative;">
                     <!-- Line connector (desktop only) -->
                     <div
                         style="position: absolute; top: 40px; left: 0; width: 100%; height: 2px; background: var(--color-bg-light); z-index: 0; display: none;">
@@ -455,7 +373,7 @@
 
                     <div class="text-center" style="position: relative; z-index: 1;">
                         <div
-                            style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-md); font-size: 2rem; color: var(--color-text-heading); font-weight: 700; border: 4px solid var(--color-bg-light);">
+                            style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-md); font-size: 2rem; color: var(--color-primary); font-weight: 700; border: 4px solid var(--color-bg-light);">
                             1</div>
                         <h4>Discovery</h4>
                         <p style="font-size: 0.9rem; color: var(--color-text-gray);">We analyze your current setup and
@@ -501,7 +419,8 @@
                         model.</p>
                 </div>
 
-                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 1.5rem;">
                     <a href="industries.html" class="card"
                         style="text-decoration: none; color: inherit; text-align: center; padding: 2rem 1rem; transition: all var(--transition-fast);">
                         <i class="ph-fill ph-shopping-cart"
@@ -544,7 +463,8 @@
                     <p class="hero-subtitle" style="margin: 1rem auto;">No hidden fees. Scale up or down anytime.</p>
                 </div>
 
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 2rem;">
                     <!-- Essentials -->
                     <div class="card"
                         style="border-top: 4px solid var(--color-text-gray); display: flex; flex-direction: column; height: 100%;">
@@ -636,7 +556,9 @@
                             <div
                                 style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center;">
                                 <div
-                                    style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%;">
+                                    style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.3);">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
+                                        alt="Sarah Jenkins" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div>
                                     <strong style="display: block;">Sarah Jenkins</strong>
@@ -725,15 +647,6 @@
                         <li><a href="team.html">Our Team</a></li>
                         <li><a href="contact.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="services.html">Bookkeeping</a></li>
-                        <li><a href="services.html">Tax Preparation</a></li>
-                        <li><a href="services.html">Payroll</a></li>
-                        <li><a href="services.html">CFO Advisory</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

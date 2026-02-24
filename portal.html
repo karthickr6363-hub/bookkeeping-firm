@@ -39,44 +39,150 @@
 </head>
 
 <body>
-    <div class="login-page">
-        <div class="login-card">
-            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem;">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
                 <i class="ph-fill ph-chart-polar"></i>
                 LEDGER <span>PRO</span>
             </a>
+            <button class="mobile-toggle" style="display: block; position: static;">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="industries.html" class="mobile-nav-link">Industries</a>
+        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
 
-            <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Client Portal</h1>
-            <p style="color: var(--color-text-gray); margin-bottom: 2rem;">Secure login to access your documents.</p>
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+            <button id="theme-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('theme-toggle').click()">Theme</button>
+            <button id="rtl-toggle-mobile" class="btn btn-outline"
+                onclick="document.getElementById('rtl-toggle').click()">RTL</button>
+        </div>
+    </div>
+    <div class="login-page" style="padding: 0; background: var(--color-white);">
+        <div style="display: flex; min-height: 100vh; width: 100%; overflow: hidden;">
+            <!-- Left Side: Image -->
+            <div style="flex: 1; display: none; position: relative; background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;"
+                class="split-image-container">
+                <style>
+                    @media (min-width: 1024px) {
+                        .split-image-container {
+                            display: block !important;
+                        }
+                    }
+                </style>
+                <div class="split-image-container"
+                    style="display: none; position: absolute; inset: 0; background: linear-gradient(rgba(10, 37, 64, 0.4), rgba(10, 37, 64, 0.7));">
+                </div>
+                <div class="split-image-container"
+                    style="display: none; position: absolute; bottom: 4rem; left: 4rem; right: 4rem; color: white;">
+                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Welcome Back to Clarity.</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; max-width: 400px;">Access your real-time financial
+                        dashboard and take control of your business growth today.</p>
+                </div>
+            </div>
 
-            <form id="loginForm" onsubmit="event.preventDefault(); alert('This is a demo portal.');">
-                <div style="margin-bottom: 1rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
-                    <input type="email" class="form-input" placeholder="you@company.com" required>
-                </div>
-                <div style="margin-bottom: 1.5rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Password</label>
-                    <input type="password" class="form-input" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Sign In</button>
-                <div style="font-size: 0.9rem;">
-                    <a href="#" style="color: var(--color-accent); text-decoration: none;">Forgot Password?</a>
-                </div>
-                <div style="margin-top: 1rem; font-size: 0.95rem;">
-                    Don't have an account? <a href="register.html"
-                        style="color: var(--color-accent); text-decoration: none; font-weight: 600;">create account</a>
-                </div>
-            </form>
-
+            <!-- Right Side: Form -->
             <div
-                style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-bg-light); font-size: 0.85rem; color: var(--color-text-gray);">
-                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.5rem;">
-                    <span style="display: flex; align-items: center; gap: 0.25rem;"><i class="ph-fill ph-lock"></i>
-                        256-bit SSL</span>
-                    <span style="display: flex; align-items: center; gap: 0.25rem;"><i
-                            class="ph-fill ph-shield-check"></i> SOC 2</span>
+                style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; background: var(--color-bg-light);">
+                <div class="login-card"
+                    style="width: 100%; max-width: 450px; box-shadow: var(--shadow-2xl); border: 1px solid rgba(0,0,0,0.05);">
+                    <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span>PRO</span>
+                    </a>
+
+                    <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem; letter-spacing: -0.02em;">Client Portal</h1>
+                    <p style="color: var(--color-text-gray); margin-bottom: 2.5rem;">Secure login to access your
+                        documents.</p>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="btn btn-outline"
+                            style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.75rem; font-weight: 500;">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4"
+                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                                <path fill="#34A853"
+                                    d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.331C2.438 15.983 5.482 18 9 18z" />
+                                <path fill="#FBBC05"
+                                    d="M3.964 10.706c-.18-.54-.282-1.117-.282-1.706s.102-1.166.282-1.706V4.963H.957C.347 6.179 0 7.551 0 9s.347 2.821.957 4.037l3.007-2.331z" />
+                                <path fill="#EA4335"
+                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.582C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.963L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z" />
+                            </svg>
+                            Google
+                        </button>
+                        <button class="btn btn-outline"
+                            style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.75rem; font-weight: 500;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.791-4.667 4.532-4.667 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; color: var(--color-text-gray); font-size: 0.85rem;">
+                        <div style="flex: 1; height: 1px; background: var(--color-bg-light);"></div>
+                        OR WITH EMAIL
+                        <div style="flex: 1; height: 1px; background: var(--color-bg-light);"></div>
+                    </div>
+
+                    <form id="loginForm" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                        <div style="margin-bottom: 1.25rem; text-align: left;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; color: var(--color-primary);">Email
+                                Address</label>
+                            <input type="email" class="form-input" placeholder="name@company.com" required
+                                style="padding: 0.85rem;">
+                        </div>
+                        <div style="margin-bottom: 1rem; text-align: left;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <label
+                                    style="font-weight: 600; font-size: 0.9rem; color: var(--color-primary);">Password</label>
+                                <a href="#"
+                                    style="color: var(--color-accent); text-decoration: none; font-size: 0.85rem; font-weight: 500;">Forgot?</a>
+                            </div>
+                            <input type="password" class="form-input" placeholder="••••••••" required
+                                style="padding: 0.85rem;">
+                        </div>
+
+                        <div
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; text-align: left;">
+                            <input type="checkbox" id="remember" style="width: auto;">
+                            <label for="remember" style="font-size: 0.9rem; color: var(--color-text-gray);">Keep me
+                                signed in</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; padding: 1rem; font-weight: 600; background: var(--gradient-primary); border: none; box-shadow: var(--shadow-glow);">
+                            Sign In to Portal
+                        </button>
+
+                        <div style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--color-text-gray);">
+                            New here? <a href="register.html"
+                                style="color: var(--color-accent); text-decoration: none; font-weight: 700;">Create an
+                                account</a>
+                        </div>
+                    </form>
+
+                    <div
+                        style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-bg-light); font-size: 0.85rem; color: var(--color-text-gray);">
+                        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem;">
+                            <span style="display: flex; align-items: center; gap: 0.35rem;"><i class="ph-fill ph-lock"
+                                    style="color: var(--color-success);"></i> 256-bit SSL</span>
+                            <span style="display: flex; align-items: center; gap: 0.35rem;"><i
+                                    class="ph-fill ph-shield-check" style="color: var(--color-accent);"></i> SOC 2
+                                Ready</span>
+                        </div>
+                        <p style="opacity: 0.8;">Protected by industry-leading security protocols.</p>
+                    </div>
                 </div>
-                Protected by Bank-Level Security
             </div>
         </div>
     </div>
@@ -101,15 +207,6 @@
                         <li><a href="team.html">Our Team</a></li>
                         <li><a href="contact.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="services.html">Bookkeeping</a></li>
-                        <li><a href="services.html">Tax Preparation</a></li>
-                        <li><a href="services.html">Payroll</a></li>
-                        <li><a href="services.html">CFO Advisory</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

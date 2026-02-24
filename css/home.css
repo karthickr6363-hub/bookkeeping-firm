@@ -134,6 +134,33 @@
     }
 }
 
+/* Dashboard Preview and Hero Overflow Fix */
+.hero {
+    overflow: hidden;
+}
+
+.dashboard-preview {
+    overflow: visible;
+    /* We want the floating cards to show, but parent must contain them */
+}
+
+@media (max-width: 768px) {
+    .floating-card {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .floating-card.top-right {
+        right: 0;
+        top: 0;
+    }
+
+    .floating-card.bottom-left {
+        left: 0;
+        bottom: 0;
+    }
+}
+
 /* Value Props */
 .value-props {
     margin-top: -2rem;

@@ -139,4 +139,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 5. Active Nav Highlighting
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+    navLinks.forEach(link => {
+        // Remove active class from all first to avoid conflicts with static HTML
+        link.classList.remove('active');
+
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+            link.classList.add('active');
+        }
+
+        // Handle special case for Home/Index
+        if ((currentPath === 'index.html' || currentPath === '') && href === 'index.html') {
+            link.classList.add('active');
+        }
+    });
 });
