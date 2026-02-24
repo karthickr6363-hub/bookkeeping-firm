@@ -86,8 +86,11 @@
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="home2.html" class="mobile-nav-link">Home 2</a>
         <a href="industries.html" class="mobile-nav-link">Industries</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
         <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="register.html" class="mobile-nav-link">Sign Up</a>
 
         <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
             <button id="theme-toggle-mobile" class="btn btn-outline"
@@ -109,7 +112,7 @@
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="home2.html" class="nav-link">Home 2</a>
                 <a href="industries.html" class="nav-link">Industries</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
@@ -302,14 +305,14 @@
                             <button class="btn btn-sm btn-outline">Reports</button>
                         </div>
 
-                        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 2rem;">
+                        <div class="dashboard-demo-grid">
                             <!-- Chart 1 -->
-                            <div>
+                            <div class="chart-container">
                                 <h5>Quarterly Profit</h5>
                                 <canvas id="demoRevenueChart"></canvas>
                             </div>
                             <!-- Chart 2 -->
-                            <div>
+                            <div class="chart-container">
                                 <h5>Expense Breakdown</h5>
                                 <div style="max-height: 250px; display: flex; justify-content: center;">
                                     <canvas id="demoExpenseChart"></canvas>
@@ -460,7 +463,9 @@
             <div class="container">
                 <div class="text-center" style="margin-bottom: 3rem;">
                     <h2>Transparent Pricing</h2>
-                    <p class="hero-subtitle" style="margin: 1rem auto;">No hidden fees. Scale up or down anytime.</p>
+                    <p class="hero-subtitle" style="margin: 1rem auto;">Simple plans for every business. <a
+                            href="pricing.html" style="color: var(--color-accent); font-weight: 600;">View All Plans
+                            →</a></p>
                 </div>
 
                 <div class="grid"

@@ -52,7 +52,7 @@
     display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .nav-menu {
         display: flex;
         align-items: center;
@@ -136,7 +136,7 @@
     font-size: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .mobile-toggle {
         display: none;
     }
@@ -256,11 +256,12 @@
 .card {
     background: var(--color-card-bg);
     border-radius: var(--radius-xl);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     border: 1px solid rgba(0, 0, 0, 0.03);
     width: 100%;
+    text-align: center;
 }
 
 .card:hover {
@@ -269,15 +270,15 @@
 }
 
 .card-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: var(--radius-lg);
     background: var(--color-bg-light);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--color-accent);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 1.5rem;
 }
 
@@ -329,7 +330,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .footer-grid {
         grid-template-columns: 2fr 1fr 1fr 1fr;
     }

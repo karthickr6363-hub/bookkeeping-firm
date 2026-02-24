@@ -161,6 +161,9 @@ h4 {
     border: none;
     font-size: var(--font-size-base);
     text-decoration: none;
+    white-space: normal;
+    text-align: center;
+    word-break: break-word;
 }
 
 .btn-primary {
@@ -214,14 +217,14 @@ h4 {
     color: var(--color-white);
 }
 
-/* Ensure contrast in dark sections */
+/* Ensure contrast in dark sections - Use absolute white to avoid dark mode variable overrides */
 .bg-dark h1,
 .bg-dark h2,
 .bg-dark h3,
 .bg-dark h4,
 .bg-dark h5,
 .bg-dark h6 {
-    color: var(--color-white) !important;
+    color: #FFFFFF !important;
 }
 
 .bg-dark p,

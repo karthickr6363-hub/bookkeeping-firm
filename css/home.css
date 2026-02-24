@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .hero-grid {
         grid-template-columns: 1fr 1fr;
         gap: 5rem;
@@ -206,6 +206,32 @@
         justify-content: center;
         width: 100%;
         box-sizing: border-box;
+    }
+}
+
+/* Dashboard Demo Section */
+.dashboard-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.chart-container {
+    width: 100%;
+    min-width: 0;
+    /* Critical for flex/grid children to shrink */
+    overflow: hidden;
+}
+
+.chart-container canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .dashboard-demo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 

@@ -25,7 +25,7 @@
             min-height: 100vh;
         }
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1025px) {
             .dashboard-layout {
                 grid-template-columns: 260px 1fr;
             }
@@ -234,8 +234,11 @@
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="home2.html" class="mobile-nav-link">Home 2</a>
         <a href="industries.html" class="mobile-nav-link">Industries</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
         <a href="dashboard.html" class="mobile-nav-link active">Dashboard</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="register.html" class="mobile-nav-link">Sign Up</a>
 
         <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
             <button id="theme-toggle-mobile" class="btn btn-outline"
@@ -313,24 +316,6 @@
                 </div>
             </div>
 
-            <!-- Charts Row -->
-            <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
-                <div class="stat-card">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <h3>Cash Flow</h3>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <span
-                                style="font-size: 0.8rem; padding: 0.25rem 0.5rem; background: var(--color-bg-light); border-radius: var(--radius-md);">Monthly</span>
-                        </div>
-                    </div>
-                    <canvas id="dashboardMainChart" height="250"></canvas>
-                </div>
-                <div class="stat-card">
-                    <h3 style="margin-bottom: 1rem;">Expenses by Category</h3>
-                    <canvas id="dashboardPieChart" height="200"></canvas>
-                </div>
-            </div>
 
             <!-- Recent Transactions Table -->
             <div class="stat-card">
@@ -417,93 +402,8 @@
                 });
             }
 
-            // Main Chart
-            const mainCtx = document.getElementById('dashboardMainChart');
-            if (mainCtx) {
-                new Chart(mainCtx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan 1', 'Jan 8', 'Jan 15', 'Jan 22', 'Jan 29'],
-                        datasets: [{
-                            label: 'Income',
-                            data: [1200, 1900, 3000, 5000, 4200],
-                            borderColor: '#10B981',
-                            tension: 0.4
-                        }, {
-                            label: 'Expenses',
-                            data: [800, 1200, 2000, 1500, 3000],
-                            borderColor: '#EF4444',
-                            tension: 0.4
-                        }]
-                    },
-                    options: { responsive: true, maintainAspectRatio: false }
-                });
-            }
-
-            // Pie Chart
-            const pieCtx = document.getElementById('dashboardPieChart');
-            if (pieCtx) {
-                new Chart(pieCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Payroll', 'Rent', 'Software', 'Other'],
-                        datasets: [{
-                            data: [55, 15, 20, 10],
-                            backgroundColor: ['#0A2540', '#0066FF', '#6A5CFF', '#E5E7EB']
-                        }]
-                    },
-                    options: { responsive: true, maintainAspectRatio: false }
-                });
-            }
         });
     </script>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col" style="padding-right: 2rem;">
-                    <a href="index.html" class="logo">
-                        <i class="ph-fill ph-chart-polar"></i>
-                        LEDGER <span>PRO</span>
-                    </a>
-                    <p style="opacity: 0.8; line-height: 1.6;">
-                        Your trusted financial partner. We provide accuracy, clarity, and strategic insights to help
-                        your business grow.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="contact.html">Careers</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="resources.html">Blog</a></li>
-                        <li><a href="resources.html">Guides</a></li>
-                        <li><a href="portal.html">Client Portal</a></li>
-                        <li><a href="contact.html">Support</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div>&copy; 2026 LEDGER PRO. All rights reserved.</div>
-                <div class="footer-social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"
-                            style="font-size: 1.25rem;"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"
-                            style="font-size: 1.25rem;"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"
-                            style="font-size: 1.25rem;"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>

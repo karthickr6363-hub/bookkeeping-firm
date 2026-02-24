@@ -33,8 +33,11 @@
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="home2.html" class="mobile-nav-link">Home 2</a>
         <a href="industries.html" class="mobile-nav-link active">Industries</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
         <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="register.html" class="mobile-nav-link">Sign Up</a>
 
         <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
             <button id="theme-toggle-mobile" class="btn btn-outline"
@@ -55,7 +58,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="home2.html" class="nav-link">Home 2</a>
                 <a href="industries.html" class="nav-link active">Industries</a>
-                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
@@ -73,24 +76,120 @@
     </header>
 
     <main style="padding-top: var(--header-height);">
-        <section class="section-padding bg-dark" style="color: white;">
+        <section class="section-padding bg-dark">
             <div class="container text-center">
-                <h1>Specialized For Your Industry</h1>
-                <p style="opacity: 0.8; margin-top: 1rem;">We understand the unique financial challenges of your sector.
+                <span class="badge badge-blue" style="margin-bottom: 1rem;">Solutions</span>
+                <h1 class="fade-in">Specialized For Your Industry</h1>
+                <p class="hero-subtitle fade-in" style="max-width: 600px; margin: 1.5rem auto 0;">
+                    We understand the unique financial challenges of your sector. Our specialized bookkeeping services
+                    provide the clarity and accuracy your business needs to thrive.
                 </p>
             </div>
         </section>
 
-        <section class="section-padding">
+        <section class="section-padding bg-light">
             <div class="container">
-                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(0, 1fr)); gap: 2rem;">
-                    <!-- Industry Card 1 -->
-                    <div class="card">
-                        <i class="ph-fill ph-shopping-cart"
-                            style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+                    <!-- E-Commerce -->
+                    <div class="card fade-in">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-shopping-cart"></i>
+                        </div>
                         <h3>E-Commerce</h3>
-                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem;">
-                            Managing inventory COGS, multi-channel sales tax (Nexus), and payment processor fees.
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Managing inventory COGS, multi-channel sales tax (Nexus), and payment processor
+                            reconciliation for platforms like Shopify and Amazon.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- SaaS & Technology -->
+                    <div class="card fade-in" style="animation-delay: 0.1s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-cpu"></i>
+                        </div>
+                        <h3>SaaS & Tech</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Specialized revenue recognition (ASC 606), R&D tax credit tracking, and burn rate analysis
+                            for growing technology companies.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Professional Services -->
+                    <div class="card fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-briefcase"></i>
+                        </div>
+                        <h3>Professional Services</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Expense tracking, client billing, and project profitability analysis for law firms,
+                            consultants, and marketing agencies.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Healthcare & Medical -->
+                    <div class="card fade-in" style="animation-delay: 0.3s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-first-aid"></i>
+                        </div>
+                        <h3>Healthcare</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Medical billing oversight, regulatory compliance tracking, and practice management financial
+                            optimization for clinics and dentists.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Real Estate & Property Management -->
+                    <div class="card fade-in" style="animation-delay: 0.4s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-buildings"></i>
+                        </div>
+                        <h3>Real Estate</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Property valuations, lease financial tracking, 1031 exchange support, and rent/maintenance
+                            cost management for investors.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Construction & Trades -->
+                    <div class="card fade-in" style="animation-delay: 0.5s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-crane"></i>
+                        </div>
+                        <h3>Construction</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Job costing, contractor payment management, equipment depreciation, and lien waiver tracking
+                            for contractors and trades.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Hospitality & Food Services -->
+                    <div class="card fade-in" style="animation-delay: 0.6s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-cooking-pot"></i>
+                        </div>
+                        <h3>Hospitality</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Inventory management, COGS analysis, payroll processing, and daily sales reconciliation for
+                            restaurants and venues.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
+                    </div>
+
+                    <!-- Nonprofits -->
+                    <div class="card fade-in" style="animation-delay: 0.7s;">
+                        <div class="card-icon">
+                            <i class="ph-fill ph-hands-praying"></i>
+                        </div>
+                        <h3>Nonprofits</h3>
+                        <p style="color: var(--color-text-gray); margin: 0.5rem 0 1.5rem; line-height: 1.6;">
+                            Grant tracking, donor Restricted/Unrestricted fund management, and Form 990 preparation
+                            support for 501(c)(3) entities.
                         </p>
                         <a href="contact.html" class="btn btn-outline btn-sm">Learn More</a>
                     </div>
