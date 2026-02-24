@@ -161,9 +161,9 @@ h4 {
     border: none;
     font-size: var(--font-size-base);
     text-decoration: none;
-    white-space: normal;
+    white-space: nowrap;
     text-align: center;
-    word-break: break-word;
+    word-break: normal;
 }
 
 .btn-primary {

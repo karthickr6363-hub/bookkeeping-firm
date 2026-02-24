@@ -262,6 +262,13 @@
     border: 1px solid rgba(0, 0, 0, 0.03);
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .btn {
+    margin-top: auto;
 }
 
 .card:hover {
