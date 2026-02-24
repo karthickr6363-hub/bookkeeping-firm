@@ -21,6 +21,12 @@
     }
 }
 
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+}
+
 .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -69,6 +75,17 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 640px) {
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Dashboard Preview */
 .dashboard-preview {
     position: relative;
@@ -85,8 +102,22 @@
     transition: transform var(--transition-slow);
 }
 
-.dashboard-card:hover {
-    transform: rotateY(0) rotateX(0);
+@media (max-width: 768px) {
+    .dashboard-card {
+        transform: none !important;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+        width: 100%;
+        max-width: 100%;
+        /* Changed from 400px */
+        box-shadow: var(--shadow-lg);
+    }
+
+    #heroChart {
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }
 
 .stat-row {
@@ -146,18 +177,53 @@
 
 @media (max-width: 768px) {
     .floating-card {
-        padding: 0.5rem;
-        font-size: 0.8rem;
+        padding: 0.35rem 0.6rem;
+        font-size: 0.7rem;
+        pointer-events: none;
+        /* Prevent accidental clicks/hover from shifting */
     }
 
     .floating-card.top-right {
-        right: 0;
-        top: 0;
+        right: 10px;
+        /* Inward */
+        top: -15px;
     }
 
     .floating-card.bottom-left {
-        left: 0;
-        bottom: 0;
+        left: 10px;
+        /* Inward */
+        bottom: -20px;
+    }
+
+    .stat-row {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+
+    .dashboard-preview {
+        padding: 0 5px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-stats div {
+        flex: 1 1 100px;
     }
 }
 

@@ -22,217 +22,335 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--color-bg-light);
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
             padding: 2rem;
         }
 
-        .login-card {
-            background: white;
-            padding: 3rem;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
+        /* Decorative background elements */
+        .bg-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-primary);
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        .blob-1 {
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            bottom: -100px;
+            right: -100px;
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.15;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0.25;
+            }
+        }
+
+        .login-container {
             width: 100%;
-            max-width: 450px;
-            text-align: center;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .login-visual {
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+        }
+
+        .login-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 37, 64, 0.2), rgba(10, 37, 64, 0.9));
+        }
+
+        .visual-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-form-container {
+            padding: 3rem 4rem;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition-fast);
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.25rem;
+            transition: var(--transition-fast);
+        }
+
+        .modern-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem 0.875rem 3rem;
+            color: white;
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+        }
+
+        .modern-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+        }
+
+        .modern-input:focus+i {
+            color: var(--color-accent);
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            flex: 1;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: none;
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            box-shadow: 0 10px 20px -5px rgba(0, 102, 255, 0.3);
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -5px rgba(0, 102, 255, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .login-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .login-visual {
+                display: none;
+            }
+
+            .login-form-container {
+                padding: 3rem 2rem;
+            }
+
+            .mobile-logo {
+                display: flex !important;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <a href="index.html" class="logo">
-                <i class="ph-fill ph-chart-polar"></i>
-                LEDGER <span>PRO</span>
-            </a>
-            <button class="mobile-toggle" style="display: block; position: static;">
-                <i class="ph ph-x"></i>
-            </button>
-        </div>
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="home2.html" class="mobile-nav-link">Home 2</a>
-        <a href="industries.html" class="mobile-nav-link">Industries</a>
-        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    <!-- Mobile Menu - Hidden for this redesign to keep focus -->
 
-        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-            <button id="theme-toggle-mobile" class="btn btn-outline"
-                onclick="document.getElementById('theme-toggle').click()">Theme</button>
-            <button id="rtl-toggle-mobile" class="btn btn-outline"
-                onclick="document.getElementById('rtl-toggle').click()">RTL</button>
-        </div>
-    </div>
-    <div class="login-page" style="padding: 0; background: var(--color-white);">
-        <div style="display: flex; min-height: 100vh; width: 100%; overflow: hidden;">
-            <!-- Left Side: Image -->
-            <div style="flex: 1; display: none; position: relative; background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;"
-                class="split-image-container">
-                <style>
-                    @media (min-width: 1024px) {
-                        .split-image-container {
-                            display: block !important;
-                        }
-                    }
-                </style>
-                <div class="split-image-container"
-                    style="display: none; position: absolute; inset: 0; background: linear-gradient(rgba(10, 37, 64, 0.4), rgba(10, 37, 64, 0.7));">
-                </div>
-                <div class="split-image-container"
-                    style="display: none; position: absolute; bottom: 4rem; left: 4rem; right: 4rem; color: white;">
-                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Welcome Back to Clarity.</h2>
-                    <p style="font-size: 1.1rem; opacity: 0.9; max-width: 400px;">Access your real-time financial
-                        dashboard and take control of your business growth today.</p>
+    <div class="login-page">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+
+        <div class="login-container">
+            <!-- Left Side: Visual -->
+            <div class="login-visual">
+                <div class="visual-content">
+                    <a href="index.html" class="logo" style="margin-bottom: 2rem; color: white;">
+                        <i class="ph-fill ph-chart-polar"></i>
+                        LEDGER <span style="color: var(--color-accent);">PRO</span>
+                    </a>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800; line-height: 1.2;">Elevate
+                        Your<br>Financial Clarity.</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.8; max-width: 380px; line-height: 1.6;">Access your
+                        real-time dashboard and take control of your business growth with our advanced bookkeeping
+                        tools.</p>
                 </div>
             </div>
 
             <!-- Right Side: Form -->
-            <div
-                style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; background: var(--color-bg-light);">
-                <div class="login-card"
-                    style="width: 100%; max-width: 450px; box-shadow: var(--shadow-2xl); border: 1px solid rgba(0,0,0,0.05);">
-                    <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem;">
+            <div class="login-form-container">
+                <div style="margin-bottom: 2.5rem;">
+                    <a href="index.html" class="logo mobile-logo"
+                        style="margin-bottom: 2rem; justify-content: center; color: white; display: none;">
                         <i class="ph-fill ph-chart-polar"></i>
-                        LEDGER <span>PRO</span>
+                        LEDGER <span style="color: var(--color-accent);">PRO</span>
                     </a>
+                    <h1 style="color: white; font-size: 2rem; margin-bottom: 0.5rem; font-weight: 700;">Welcome back
+                    </h1>
+                    <p style="color: rgba(255, 255, 255, 0.5);">Please enter your details to sign in.</p>
+                </div>
 
-                    <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem; letter-spacing: -0.02em;">Client Portal</h1>
-                    <p style="color: var(--color-text-gray); margin-bottom: 2.5rem;">Secure login to access your
-                        documents.</p>
+                <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                    <button class="social-btn">
+                        <svg width="20" height="20" viewBox="0 0 18 18">
+                            <path fill="#4285F4"
+                                d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                            <path fill="#34A853"
+                                d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.331C2.438 15.983 5.482 18 9 18z" />
+                            <path fill="#FBBC05"
+                                d="M3.964 10.706c-.18-.54-.282-1.117-.282-1.706s.102-1.166.282-1.706V4.963H.957C.347 6.179 0 7.551 0 9s.347 2.821.957 4.037l3.007-2.331z" />
+                            <path fill="#EA4335"
+                                d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.582C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.963L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z" />
+                        </svg>
+                        Google
+                    </button>
+                    <button class="social-btn">
+                        <i class="ph-fill ph-facebook-logo" style="color: #1877F2; font-size: 1.5rem;"></i>
+                        Facebook
+                    </button>
+                </div>
 
-                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
-                        <button class="btn btn-outline"
-                            style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.75rem; font-weight: 500;">
-                            <svg width="18" height="18" viewBox="0 0 18 18">
-                                <path fill="#4285F4"
-                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
-                                <path fill="#34A853"
-                                    d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.331C2.438 15.983 5.482 18 9 18z" />
-                                <path fill="#FBBC05"
-                                    d="M3.964 10.706c-.18-.54-.282-1.117-.282-1.706s.102-1.166.282-1.706V4.963H.957C.347 6.179 0 7.551 0 9s.347 2.821.957 4.037l3.007-2.331z" />
-                                <path fill="#EA4335"
-                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.582C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.963L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z" />
-                            </svg>
-                            Google
-                        </button>
-                        <button class="btn btn-outline"
-                            style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.75rem; font-weight: 500;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.791-4.667 4.532-4.667 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                            Facebook
-                        </button>
+                <div class="divider">or use email</div>
+
+                <form id="loginForm" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                    <div class="form-group">
+                        <label class="form-label">Email address</label>
+                        <div class="input-wrapper">
+                            <i class="ph ph-envelope-simple"></i>
+                            <input type="email" class="modern-input" placeholder="name@company.com" required>
+                        </div>
                     </div>
 
-                    <div
-                        style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; color: var(--color-text-gray); font-size: 0.85rem;">
-                        <div style="flex: 1; height: 1px; background: var(--color-bg-light);"></div>
-                        OR WITH EMAIL
-                        <div style="flex: 1; height: 1px; background: var(--color-bg-light);"></div>
-                    </div>
-
-                    <form id="loginForm" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-                        <div style="margin-bottom: 1.25rem; text-align: left;">
-                            <label
-                                style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; color: var(--color-primary);">Email
-                                Address</label>
-                            <input type="email" class="form-input" placeholder="name@company.com" required
-                                style="padding: 0.85rem;">
-                        </div>
-                        <div style="margin-bottom: 1rem; text-align: left;">
-                            <div
-                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <label
-                                    style="font-weight: 600; font-size: 0.9rem; color: var(--color-primary);">Password</label>
-                                <a href="#"
-                                    style="color: var(--color-accent); text-decoration: none; font-size: 0.85rem; font-weight: 500;">Forgot?</a>
-                            </div>
-                            <input type="password" class="form-input" placeholder="••••••••" required
-                                style="padding: 0.85rem;">
-                        </div>
-
+                    <div class="form-group">
                         <div
-                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; text-align: left;">
-                            <input type="checkbox" id="remember" style="width: auto;">
-                            <label for="remember" style="font-size: 0.9rem; color: var(--color-text-gray);">Keep me
-                                signed in</label>
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <label class="form-label" style="margin-bottom: 0;">Password</label>
+                            <a href="#"
+                                style="color: var(--color-accent); text-decoration: none; font-size: 0.8rem; font-weight: 500;">Forgot
+                                password?</a>
                         </div>
-
-                        <button type="submit" class="btn btn-primary"
-                            style="width: 100%; padding: 1rem; font-weight: 600; background: var(--gradient-primary); border: none; box-shadow: var(--shadow-glow);">
-                            Sign In to Portal
-                        </button>
-
-                        <div style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--color-text-gray);">
-                            New here? <a href="register.html"
-                                style="color: var(--color-accent); text-decoration: none; font-weight: 700;">Create an
-                                account</a>
+                        <div class="input-wrapper">
+                            <i class="ph ph-lock-simple"></i>
+                            <input type="password" class="modern-input" placeholder="••••••••" required>
                         </div>
-                    </form>
-
-                    <div
-                        style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-bg-light); font-size: 0.85rem; color: var(--color-text-gray);">
-                        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem;">
-                            <span style="display: flex; align-items: center; gap: 0.35rem;"><i class="ph-fill ph-lock"
-                                    style="color: var(--color-success);"></i> 256-bit SSL</span>
-                            <span style="display: flex; align-items: center; gap: 0.35rem;"><i
-                                    class="ph-fill ph-shield-check" style="color: var(--color-accent);"></i> SOC 2
-                                Ready</span>
-                        </div>
-                        <p style="opacity: 0.8;">Protected by industry-leading security protocols.</p>
                     </div>
+
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+                        <input type="checkbox" id="remember"
+                            style="width: 1rem; height: 1rem; cursor: pointer; accent-color: var(--color-accent);">
+                        <label for="remember"
+                            style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); cursor: pointer;">Remember for
+                            30 days</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign in</button>
+
+                    <p
+                        style="text-align: center; margin-top: 1.5rem; color: rgba(255, 255, 255, 0.5); font-size: 0.875rem;">
+                        Don't have an account? <a href="register.html"
+                            style="color: white; font-weight: 600; text-decoration: none;">Create account</a>
+                    </p>
+                </form>
+
+                <div
+                    style="margin-top: auto; padding-top: 2rem; display: flex; justify-content: center; gap: 2rem; color: rgba(255, 255, 255, 0.3); font-size: 0.75rem;">
+                    <span style="display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-shield-check"></i>
+                        SOC 2 Compliant</span>
+                    <span style="display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-lock-key"></i>
+                        256-bit AES</span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col" style="padding-right: 2rem;">
-                    <a href="index.html" class="logo">
-                        <i class="ph-fill ph-chart-polar"></i>
-                        LEDGER <span>PRO</span>
-                    </a>
-                    <p style="opacity: 0.8; line-height: 1.6;">
-                        Your trusted financial partner. We provide accuracy, clarity, and strategic insights to help
-                        your business grow.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="contact.html">Careers</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="resources.html">Blog</a></li>
-                        <li><a href="resources.html">Guides</a></li>
-                        <li><a href="portal.html">Client Portal</a></li>
-                        <li><a href="contact.html">Support</a></li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="footer-bottom">
-                <div>&copy; 2026 LEDGER PRO. All rights reserved.</div>
-                <div class="footer-social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"
-                            style="font-size: 1.25rem;"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"
-                            style="font-size: 1.25rem;"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"
-                            style="font-size: 1.25rem;"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>
